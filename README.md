@@ -1,43 +1,55 @@
-# BRAKER-TSEBRA-Workshop
+# 2023 Workshop on Genomics, Cesky Krumlov: Genome Annotation
 
-This repository contains course materials for a workshop on structural genome annotation with BRAKER and TSEBRA
+This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the 2023 Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2023-workshop-on-genomics-cesky-krumlov/).
 
-Authors: Katharina Hoff & Lars Gabriel
+Authors: Katharina Hoff & Natalia Nenasheva
 
 Contact: katharina.hoff@uni-greifswald.de
 
-## Go to AppHub
-
-This course material is designed to work on resources of University of Greifswald.
-
-In intranet (establish VPN connection if necessary, see https://rz.uni-greifswald.de/dienste/technische-infrastruktur/vpn/).
-
-Go to https://apphub.wolke.uni-greifswald.de/ in Chrome/Chromium browser. Login with university credentials. Select "RESPONSE". Note that there is a tiny arrow pointing downwards on the far right of "START". Click on that arrow to expand Advanced options. Select "CPU 6" and "RAM 10GB" before pressing the "START" button. On the bottom of the page, click on "Open" once the instance has booted (will take a little while). Your instance will open in a new browser tab.
-
-## Don't have no AppHub access :-(
-
-If you don't have access to our AppHub but you do have a machine with Docker and root permissions, you can run the course container on your own machine as follows:
-
-```
-sudo docker run --rm -it -u 1000:0 -p 8888:8888 katharinahoff/response-notebook:devel
-```
-
-Click on the link and continue to work in your web browsern (best use Chrome/Chromium).
-
-## Clone course materials
+## Cloning this repository
 
 Open a terminal window (black symbol with white dollar-underscore sign) and enter (press enter key after typing):
 
 ```
-git clone https://github.com/KatharinaHoff/BRAKER-TSEBRA-Workshop.git
+git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
 ```
 
-On the left, a folder `BRAKER-TSEBRA-Workshop` will appear in your "file navigator". That folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb). 
+This will create a folder called `GenomeAnnotation_Workshop2023` in your home directory. This folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb).
+
+## Obtaining the Singularity Image File
+
+The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a file called `genome_annotation.sif` for you. You find this file at /home/genomics/workshop_materials/genome_annotation. However, if you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
+
+```
+singularity build genome_annotation.sif docker://katharinahoff/ceskykrumlov23-notebook:devel
+```
+
+## Displaying the JupyterNotebook on Genome Annotation with this Singularity Image
+
+You can run the image for JupyterNotebook display in any bash terminal from your home directory as follows:
+
+```
+singularity exec --cleanenv --bind /home/genomics/workshop_material:/home/genomics/workshop_material --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan ${HOME}/genome_annotation.sif jupyter notebook --no-browser --ip=127.0.0.1
+```
+
+The local directory /home/genomics/workshop_material may only be available during the course on site at Cesky Krumlov's AWS instance. If you want to use the image after the course, you may want to remove this directory from the command above (explicitely, remove: `--bind /home/genomics/workshop_material:/home/genomics/workshop_material`).
+
+It is vital that you mount /home/jovyan to a writable location. Otherwise, you will not be able to save your work. The command above will mount the current working directory to /home/jovyan. If you want to mount a different directory, replace ${PWD} with the path to the directory you want to mount (this corresponds specifically to this part of the command: `--bind ${PWD}:/home/jovyan`).
+
+The flag `--cleanenv` makes sure that other environment variables/tools (e.g. Perl dependencies) installed on the host do not interfere with the image.
+
+This will display a link in your terminal that you may post into your web browser. The link will look something like this:
+
+```
+http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
+```
 
 ## Course contents
 
    * repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
    * short read RNA-Seq to genome alignment with Hisat2
+   * sorting an RNA-Seq alignment file with Samtools
+   * application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein data base)
    * application of BRAKER1 (structural genome annotation with short read RNA-Seq alignments)
    * application of BRAKER2 (structural genome annotation with protein database)
    * merging BRAKER1 and BRAKER2 gene sets with TSEBRA
@@ -46,4 +58,4 @@ On the left, a folder `BRAKER-TSEBRA-Workshop` will appear in your "file navigat
    
 ## Acknowledgements
 
-Stefan Kemnitz from The University Compute Center at University of Greifswald (https://rz.uni-greifswald.de/dienste/allgemein/sonstiges/high-performance-computing/) kindly assisted in building the docker container.
+Stefan Kemnitz from The University Compute Center at University of Greifswald (https://rz.uni-greifswald.de/dienste/allgemein/sonstiges/high-performance-computing/) kindly assisted in building docker containers for genome annotation with methods developed at University of Greifswald.
