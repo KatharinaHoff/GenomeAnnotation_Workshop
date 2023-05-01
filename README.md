@@ -55,7 +55,8 @@ http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
    * application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein data base)
    * application of BRAKER1 (structural genome annotation with short read RNA-Seq alignments)
    * application of BRAKER2 (structural genome annotation with protein database)
-   * merging BRAKER1 and BRAKER2 gene sets with TSEBRA
+   * application of GALBA (structural genome annotation with proteins of a closely related species, suitable for e.g. vertebrate genomes)
+   * merging BRAKER1 and BRAKER2 (or GALBA) gene sets with TSEBRA
    * BUSCO assessment of predicted gene set
    * preparing an assembly hub for the UCSC Genome Browser with MakeHub 
    
