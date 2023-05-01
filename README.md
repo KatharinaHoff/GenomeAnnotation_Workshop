@@ -59,7 +59,17 @@ http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
    * merging BRAKER1 and BRAKER2 (or GALBA) gene sets with TSEBRA
    * BUSCO assessment of predicted gene set
    * preparing an assembly hub for the UCSC Genome Browser with MakeHub 
-   
+
+## Data sets
+
+If you want to execute the JupyterNotebooks, you will need data. At the Cesky Krumlov Workshop, these datasets have already been prepared for you at /home/genomics/workshop_materials/genome_annotation. If you want to use the JupyterNotebook after the course, you will need to download the data sets from the following locations:
+
+   * ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR934/SRR934391/SRR934391_1.fastq.gz
+   * ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR934/SRR934391/SRR934391_2.fastq.gz
+   * https://nextcloud.uni-greifswald.de/index.php/s/kb7eswzzTe6KiNi # (SRR934391.sam, an intermediary results file that takes a long time to compute)
+   * https://bioinf.uni-greifswald.de/bioinf/partitioned_odb11/Viridiplantae.fa.gz # you need to unpack this file with gunzip Viridiplantae.fa.gz
+
+
 ## Acknowledgements
 
 Stefan Kemnitz from The University Compute Center at University of Greifswald (https://rz.uni-greifswald.de/dienste/allgemein/sonstiges/high-performance-computing/) kindly assisted in building docker containers for genome annotation with methods developed at University of Greifswald.
