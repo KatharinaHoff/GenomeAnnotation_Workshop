@@ -8,7 +8,7 @@ Contact: katharina.hoff@uni-greifswald.de
 
 ## Cloning this repository
 
-Open a terminal window (black symbol with white dollar-underscore sign) and enter (press enter key after typing):
+Open a terminal window and enter (press enter key after typing):
 
 ```
 git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
@@ -18,7 +18,7 @@ This will create a folder called `GenomeAnnotation_Workshop2023` in your home di
 
 ## Obtaining the Singularity Image File
 
-The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a file called `genome_annotation.sif` for you. You find this file at /home/genomics/workshop_materials/genome_annotation. However, if you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
+The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a file called `genome_annotation.sif` for you. You find this file at `/home/genomics/workshop_materials/genome_annotation`. However, if you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
 ```
 singularity build genome_annotation.sif docker://katharinahoff/ceskykrumlov23-notebook:devel
@@ -32,9 +32,9 @@ You can run the image for JupyterNotebook display in any bash terminal from your
 singularity exec --cleanenv --bind /home/genomics/workshop_material:/home/genomics/workshop_material --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan ${HOME}/genome_annotation.sif jupyter notebook --no-browser --ip=127.0.0.1
 ```
 
-The local directory /home/genomics/workshop_material may only be available during the course on site at Cesky Krumlov's AWS instance. If you want to use the image after the course, you may want to remove this directory from the command above (explicitely, remove: `--bind /home/genomics/workshop_material:/home/genomics/workshop_material`).
+The local directory `/home/genomics/workshop_material` may only be available during the course on site at Cesky Krumlov's AWS instance. If you want to use the image after the course, you may want to remove this directory from the command above (explicitely, remove: `--bind /home/genomics/workshop_material:/home/genomics/workshop_material`).
 
-It is vital that you mount /home/jovyan to a writable location. Otherwise, you will not be able to save your work. The command above will mount the current working directory to /home/jovyan. If you want to mount a different directory, replace ${PWD} with the path to the directory you want to mount (this corresponds specifically to this part of the command: `--bind ${PWD}:/home/jovyan`).
+It is vital that you mount `/home/jovyan` to a writable location. Otherwise, you will not be able to save your work. The command above will mount the current working directory to `/home/jovyan`. If you want to mount a different directory, replace `${PWD}` with the path to the directory you want to mount (this corresponds specifically to this part of the command: `--bind ${PWD}:/home/jovyan`).
 
 The flag `--cleanenv` makes sure that other environment variables/tools (e.g. Perl dependencies) installed on the host do not interfere with the image.
 
@@ -44,21 +44,22 @@ This will display a link in your terminal that you may post into your web browse
 http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
 ```
 
-:bomb: The Docker container that is the foundation of this Singularity image file contains a license key for GeneMark-ETP that has an expiration date. By using BRAKER1, BRAKER2, or BRAKER3 with any version of GeneMark-ES/ET/EP/ETP/S-T, you agree to the license terms of GeneMark-ES/ET/EP/ETP/S-T (terms available at http://exon.gatech.edu/GeneMark/license_download.cgi). If you want to use BRAKER1, BRAKER2, or BRAKER3 after the expiration date of the license key, we recommend that you use the official BRAKER container available from https://hub.docker.com/r/teambraker/braker3. That container will likely be updated with new license keys, in the future.
+:bomb: The Docker container that is the foundation of this Singularity image file contains a license key for GeneMark-ETP that has an (unknown) expiration date (probably expiring less than a year from now). By using BRAKER1, BRAKER2, or BRAKER3 with any version of GeneMark-ES/ET/EP/ETP/S-T, you agree to the license terms of GeneMark-ES/ET/EP/ETP/S-T (terms available at http://exon.gatech.edu/GeneMark/license_download.cgi). If you want to use BRAKER1, BRAKER2, or BRAKER3 after the expiration date of the license key, we recommend that you use the official BRAKER container available from https://hub.docker.com/r/teambraker/braker3. That container will likely be updated with new license keys, in the future.
 
 
 ## Course contents
 
-   * repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
-   * short read RNA-Seq to genome alignment with Hisat2
-   * sorting an RNA-Seq alignment file with Samtools
-   * application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein data base)
-   * application of BRAKER1 (structural genome annotation with short read RNA-Seq alignments)
-   * application of BRAKER2 (structural genome annotation with protein database)
-   * application of GALBA (structural genome annotation with proteins of a closely related species, suitable for e.g. vertebrate genomes)
-   * merging BRAKER1 and BRAKER2 (or GALBA) gene sets with TSEBRA
-   * BUSCO assessment of predicted gene set
-   * preparing an assembly hub for the UCSC Genome Browser with MakeHub 
+   * theory: repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
+   * theory: short read RNA-Seq to genome alignment with Hisat2
+   * theory: sorting an RNA-Seq alignment file with Samtools
+   * practice: application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein data base)
+   * practice: application of BRAKER1 (structural genome annotation with short read RNA-Seq alignments)
+   * practice: application of BRAKER2 (structural genome annotation with protein database)
+   * practice: application of GALBA (structural genome annotation with proteins of a closely related species, suitable for e.g. vertebrate genomes)
+   * practice: merging BRAKER1 and BRAKER2 (or GALBA) gene sets with TSEBRA
+   * practice: BUSCO assessment of predicted gene set
+   * practice: preparing an assembly hub for the UCSC Genome Browser with MakeHub 
+   * for professionals: annotate an entire genome from scratch and do better than the reference annotation!
 
 ## Data sets
 
@@ -69,6 +70,35 @@ If you want to execute the JupyterNotebooks, you will need data. At the Cesky Kr
    * https://nextcloud.uni-greifswald.de/index.php/s/kb7eswzzTe6KiNi # (SRR934391.sam, an intermediary results file that takes a long time to compute)
    * https://bioinf.uni-greifswald.de/bioinf/partitioned_odb11/Viridiplantae.fa.gz # you need to unpack this file with gunzip Viridiplantae.fa.gz
 
+## Moving from JupyterLab to SLURM
+
+The exact same container that is used for rendering our teaching materials with JupyterLab can be used on any HPC (that has singularity support) with a SLURM scheduler. In this case, you will not execute JupyterLab, but submit a task as job for computation. Example for calling BRAKER3 with SLURM:
+
+### Script contents: braker3.sh
+
+```
+#!/bin/bash                                  
+#SBATCH -o braker.%j.%N.out
+#SBATCH -e braker.%j.%N.err
+#SBATCH --get-user-env
+#SBATCH --time=72:00:00
+#SBATCH -N 1 # number of nodes, BRAKER does not scale across multiple nodes
+#SBATCH -n 72 # number of threads on that node
+
+module load singularity
+
+(singularity exec -B $PWD:$PWD genome_annotation.sif braker.pl --genome=data/genome.fasta.masked --prot_seq=data/proteins.fa --threads 72 ) &> braker3.log
+```
+
+Any tasks from our JupyterNotebook cells can be implemented in such scripts.
+
+### Submit the script
+
+Simply submit the job with sbatch:
+
+```
+sbatch braker3.sh
+```
 
 ## Acknowledgements
 
