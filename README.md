@@ -63,12 +63,7 @@ http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
 
 ## Data sets
 
-If you want to execute the JupyterNotebooks, you will need data. At the Cesky Krumlov Workshop, these datasets have already been prepared for you at /home/genomics/workshop_materials/genome_annotation. If you want to use the JupyterNotebook after the course, you will need to download the data sets from the following locations:
-
-   * ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR934/SRR934391/SRR934391_1.fastq.gz
-   * ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR934/SRR934391/SRR934391_2.fastq.gz
-   * https://nextcloud.uni-greifswald.de/index.php/s/kb7eswzzTe6KiNi # (SRR934391.sam, an intermediary results file that takes a long time to compute)
-   * https://bioinf.uni-greifswald.de/bioinf/partitioned_odb11/Viridiplantae.fa.gz # you need to unpack this file with gunzip Viridiplantae.fa.gz
+If you want to execute the JupyterNotebooks, you will need data. At the Cesky Krumlov Workshop, these datasets have already been prepared for you at /home/genomics/workshop_materials/genome_annotation. If you want to use the JupyterNotebook after the course, you will need to download the data sets to your local device. Simply execute [obtain_data.sh](obtain_data.sh) in your terminal (e.g. `bash obtain_data.sh`). This will require **59 GB** of free space!
 
 ## Moving from JupyterLab to SLURM
 

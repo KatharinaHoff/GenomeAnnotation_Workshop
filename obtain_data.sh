@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd /nas-hs/users/katharina/krumlov # modify to your own path!
 mkdir busco
 cd busco
