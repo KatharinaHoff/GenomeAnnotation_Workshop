@@ -29,10 +29,10 @@ singularity build genome_annotation.sif docker://katharinahoff/ceskykrumlov23-no
 You can run the image for JupyterNotebook display in any bash terminal from your home directory as follows:
 
 ```
-singularity exec --cleanenv --bind /home/genomics/workshop_material:/home/genomics/workshop_material --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan ${HOME}/genome_annotation.sif jupyter notebook --no-browser --ip=127.0.0.1
+singularity exec --cleanenv --bind /home/genomics/workshop_material/genome_annotation:/home/genomics/workshop_material/genome_annotation --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan ${HOME}/genome_annotation.sif jupyter notebook --no-browser --ip=127.0.0.1
 ```
 
-The local directory `/home/genomics/workshop_material` may only be available during the course on site at Cesky Krumlov's AWS instance. If you want to use the image after the course, you may want to remove this directory from the command above (explicitely, remove: `--bind /home/genomics/workshop_material:/home/genomics/workshop_material`).
+The local directory `/home/genomics/workshop_material` may only be available during the course on site at Cesky Krumlov's AWS instance. If you want to use the image after the course, you may want to remove this directory from the command above (explicitely, remove: `--bind /home/genomics/workshop_material/genome_annotation:/home/genomics/workshop_material/genome_annotation`).
 
 It is vital that you mount `/home/jovyan` to a writable location. Otherwise, you will not be able to save your work. The command above will mount the current working directory to `/home/jovyan`. If you want to mount a different directory, replace `${PWD}` with the path to the directory you want to mount (this corresponds specifically to this part of the command: `--bind ${PWD}:/home/jovyan`).
 
