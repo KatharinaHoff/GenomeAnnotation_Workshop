@@ -3,6 +3,7 @@ mkdir busco
 cd busco
 wget https://busco-data.ezlab.org/v4/data/lineages/brassicales_odb10.2020-08-05.tar.gz
 tar -zxvf brassicales_odb10.2020-08-05.tar.gz
+rm brassicales_odb10.2020-08-05.tar.gz
 cd ..
 mkdir orthodb
 cd orthodb
@@ -27,5 +28,10 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR225/ERR225716/ERR225716_2.fastq.gz
 wget https://bioinf.uni-greifswald.de/bioinf/katharina/krumlov/ERR225716.ss.bam
 wget https://bioinf.uni-greifswald.de/bioinf/katharina/krumlov/ERR337976.ss.bam
 # genome of Hymenolopis microstoma repeat masked (custom masking)
+cd ..
+mkdir genome
+cd genome
 wget https://bioinf.uni-greifswald.de/bioinf/katharina/krumlov/genome.fa.masked.gz
 gunzip genome.fa.masked.gz
+
+# 59 GB of data in total
