@@ -34,7 +34,7 @@ wget http://bioinf.uni-greifswald.de/webaugustus/examples/krumlov/SRR18907291.s.
 cd ..
 mkdir genome
 cd genome
-# Chr 4 of Babsia duncani
+# Chr 4 of Babesia duncani
 wget https://bioinf.uni-greifswald.de/bioinf/katharina/krumlov/genome.fa.gz
 gunzip genome.fa.gz
 cd ..
