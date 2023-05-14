@@ -37,7 +37,7 @@ git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
 
 ### Remember:
 To copy/paste in Guacamole Desktop you have to do:
-Ctl + Shift + Command to open the dialog box on the left of the screen. To close the dialog box do Ctl + Shift + Command. To paste you write click in the terminal. 
+Ctrl + Shift + Command to open the dialog box on the left of the screen. To close the dialog box do Ctrl + Shift + Command. To paste you right click in the terminal. 
 
 This will create a folder called `GenomeAnnotation_Workshop2023` in your home directory. This folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb) and all the necessary data ☺️
 
