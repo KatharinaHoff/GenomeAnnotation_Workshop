@@ -30,7 +30,7 @@ Open Guacamole Desktop and open a terminal from within the Desktop environment.
 In your terminal, in your home (~), make a new directory for the git clone
 
 ```
-mkdir your_name_GA
+mkdir your_name_GA # replace your_name_GA by your actual name, e.g. katharina_hoff_GA if your name is katharina hoff
 cd your_name_GA
 git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
 ```
@@ -107,7 +107,8 @@ To create a new code block, you click on "Insert"
 
 
 ## If you want to run this course after the Workshop on Genomics 2023
-## Obtaining the Singularity Image File
+
+### Obtaining the Singularity Image File
 
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
@@ -115,7 +116,7 @@ If you want to obtain the same image for using it after the course, you can do s
 singularity build genome_annotation.sif docker://katharinahoff/ceskykrumlov23-notebook:latest
 ```
 
-## Opening the JupyterNotebook on Genome Annotation with this Singularity Image
+### Opening the JupyterNotebook on Genome Annotation with this Singularity Image
 
 ```
 # execute from your user home directory, should not be a group drive
@@ -136,17 +137,15 @@ http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
 
 :bomb: The Docker container that is the foundation of this Singularity image file contains a license key for GeneMark-ETP that has an (unknown) expiration date (probably expiring less than a year from now). By using BRAKER1, BRAKER2, or BRAKER3 with any version of GeneMark-ES/ET/EP/ETP/S-T, you agree to the license terms of GeneMark-ES/ET/EP/ETP/S-T (terms available at http://exon.gatech.edu/GeneMark/license_download.cgi). If you want to use BRAKER1, BRAKER2, or BRAKER3 after the expiration date of the license key, we recommend that you use the official BRAKER container available from https://hub.docker.com/r/teambraker/braker3. That container will likely be updated with new license keys, in the future.
 
+### Data sets
 
+If you want to execute the JupyterNotebooks, you will need data. At the Cesky Krumlov Workshop, these datasets have already been prepared for you at /home/genomics/workshop_materials/genome_annotation. If you want to use the JupyterNotebook after the course, you will need to download the data sets to your local device. Simply execute [obtain_data.sh](obtain_data.sh) in your terminal (e.g. `bash obtain_data.sh`). This will require **28 GB** of free space!
 
-## Data sets
-
-If you want to execute the JupyterNotebooks, you will need data. At the Cesky Krumlov Workshop, these datasets have already been prepared for you at /home/genomics/workshop_materials/genome_annotation. If you want to use the JupyterNotebook after the course, you will need to download the data sets to your local device. Simply execute [obtain_data.sh](obtain_data.sh) in your terminal (e.g. `bash obtain_data.sh`). This will require **59 GB** of free space!
-
-## Moving from JupyterLab to SLURM
+### Moving from JupyterLab to SLURM
 
 The exact same container that is used for rendering our teaching materials with JupyterLab can be used on any HPC (that has singularity support) with a SLURM scheduler. In this case, you will not execute JupyterLab, but submit a task with SLURM for computation. Example for calling BRAKER3 with SLURM:
 
-### Script contents: braker3.sh
+#### Script contents: braker3.sh
 
 ```
 #!/bin/bash                                  
@@ -164,15 +163,17 @@ module load singularity
 
 Any tasks from our JupyterNotebook cells can be implemented in such scripts.
 
-### Submit the script
+#### Submit the script
 
 Simply submit the job with sbatch:
 
-```
+``` 
 sbatch braker3.sh
 ```
 
 ## Acknowledgements
 
 Stefan Kemnitz from The University Compute Center at University of Greifswald (https://rz.uni-greifswald.de/dienste/allgemein/sonstiges/high-performance-computing/) kindly assisted in building docker containers for genome annotation with methods developed at University of Greifswald.
+
+Josie Paris from Università Politecnica delle Marche provided very helpful instructions on how to use the cloud computing infrastructure during the Cesky Krumlov workshop.
 
