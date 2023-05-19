@@ -23,7 +23,8 @@ Contact: katharina.hoff@uni-greifswald.de
 
 ## Cloning the GiHub repository for this workshop
 
-Open Guacamole Desktop and open a terminal from within the Desktop environment.
+There are two ways to run this workshop today. The preferred way is through Guacamole Desktop:
+1. Open Guacamole Desktop and open a terminal from within the Desktop environment.
 
 <img width="949" alt="Screenshot 2023-05-14 at 12 27 02" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/c7048382-cee7-4f4d-888d-fc79498ebca9">
 
@@ -62,6 +63,29 @@ Open one of the links by right-clicking on it and say "open link". This will ope
 
 DO NOT CLOSE YOUR TERMINAL! 🖥 It's essential that you keep it open. Click on the folder to access the workshop content. Double click to open the GenomeAnnotation.ipynb. Welcome to the starting point of this lab 🤓
 
+### NB: If Guacamole Desktop doesn't work on your laptop, do the following:
+
+1. Open a terminal and ssh into your instance
+2. In your terminal, in your home (~), make a new directory for the git clone
+
+```
+mkdir your_name_GA # replace your_name_GA by your actual name, e.g. katharina_hoff_GA if your name is katharina hoff
+cd your_name_GA
+git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
+```
+cd into the `your_name_GA` directory
+
+3. Execute singularity:
+
+```
+singularity exec --cleanenv --bind /home/genomics/workshop_materials/genome_annotation:/home/genomics/workshop_materials/genome_annotation --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan /home/genomics/workshop_materials/genome_annotation/genome_annotation.sif jupyter notebook --no-browser --ip=0.0.0.0 --port=8899
+```
+Then when the link shows up in the terminal, e.g.:
+
+```
+http://127.0.0.1:8899/?token=1d5886ad8013bbcaeba6ccaef3dc815e91e17caa696ab596
+```
+Change the IP (127.0.0.1) to your instance address
 
 ### A few notes about running code in Jupyter Notebooks:
 
