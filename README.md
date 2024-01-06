@@ -1,6 +1,6 @@
 # 2024 Workshop on Genomics, Cesky Krumlov: Genome Annotation
 
-This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the 2023 Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2023-workshop-on-genomics-cesky-krumlov/).
+This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2024-workshop-on-genomics-cesky-krumlov/).
 
 Authors: Katharina Hoff & Natalia Nenasheva
 
@@ -26,21 +26,21 @@ Contact: katharina.hoff@uni-greifswald.de
 There are two ways to run this workshop today. The preferred way is through Guacamole Desktop:
 1. Open Guacamole Desktop and open a terminal from within the Desktop environment.
 
-<img width="949" alt="Screenshot 2023-05-14 at 12 27 02" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/c7048382-cee7-4f4d-888d-fc79498ebca9">
+<img width="949" alt="Screenshot 2023-05-14 at 12 27 02" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop/assets/38511308/c7048382-cee7-4f4d-888d-fc79498ebca9">
 
 In your terminal, in your home (~), make a new directory for the git clone
 
 ```
 mkdir your_name_GA # replace your_name_GA by your actual name, e.g. katharina_hoff_GA if your name is katharina hoff
 cd your_name_GA
-git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
+git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop.git
 ```
 
 ### Remember:
 To copy/paste in Guacamole Desktop you have to do:
 Ctrl + Shift + Command to open the dialog box on the left of the screen. To close the dialog box do Ctrl + Shift + Command. To paste you right click in the terminal. 
 
-This will create a folder called `GenomeAnnotation_Workshop2023` in your home directory. This folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb) and all the necessary data ☺️
+This will create a folder called `GenomeAnnotation_Workshop` in your home directory. This folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb) and all the necessary data ☺️
 
 The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a singularity file called `genome_annotation.sif` for you. You can find this file at `/home/genomics/workshop_materials/genome_annotation`.
 
@@ -59,7 +59,7 @@ http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
 
 Open one of the links by right-clicking on it and say "open link". This will open a firefox web browser window. You should see something like the following:
 
-<img width="1050" alt="Screenshot 2023-05-14 at 12 25 07" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/21e3f2f8-d532-4115-8a59-8527fe2d32cc">
+<img width="1050" alt="Screenshot 2023-05-14 at 12 25 07" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop/assets/38511308/21e3f2f8-d532-4115-8a59-8527fe2d32cc">
 
 DO NOT CLOSE YOUR TERMINAL! 🖥 It's essential that you keep it open. Click on the folder to access the workshop content. Double click to open the GenomeAnnotation.ipynb. Welcome to the starting point of this lab 🤓
 
@@ -71,7 +71,7 @@ DO NOT CLOSE YOUR TERMINAL! 🖥 It's essential that you keep it open. Click on 
 ```
 mkdir your_name_GA # replace your_name_GA by your actual name, e.g. katharina_hoff_GA if your name is katharina hoff
 cd your_name_GA
-git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
+git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop.git
 ```
 cd into the `your_name_GA` directory
 
@@ -91,7 +91,7 @@ Change the IP (127.0.0.1) to your instance address
 
 You can run code by clicking "Run" at the top of the screen
 
-<img width="650" alt="Screenshot 2023-05-14 at 12 33 24" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/d9374ebe-a77d-493d-95b5-d5ad1668e992">
+<img width="650" alt="Screenshot 2023-05-14 at 12 33 24" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop/assets/38511308/d9374ebe-a77d-493d-95b5-d5ad1668e992">
 
 Alternatively, you can click inside any box which starts with
 
@@ -103,7 +103,7 @@ and type Shift + Enter
 
 You can stop a code block running by pressing "Stop" (the black square)
 
-<img width="567" alt="Screenshot 2023-05-14 at 12 44 32" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/45e6d335-1476-408c-8ca5-ecf6a7456ba3">
+<img width="567" alt="Screenshot 2023-05-14 at 12 44 32" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop/assets/38511308/45e6d335-1476-408c-8ca5-ecf6a7456ba3">
 
 
 
@@ -130,14 +130,14 @@ In[ ]
 To create a new code block, you click on "Insert"
 
 
-## If you want to run this course after the Workshop on Genomics 2023
+## If you want to run this course after the Workshop on Genomics
 
 ### Obtaining the Singularity Image File
 
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
 ```
-singularity build genome_annotation.sif docker://katharinahoff/ceskykrumlov23-notebook:latest
+singularity build genome_annotation.sif docker://katharinahoff/bioinformatics-notebook:latest
 ```
 
 ### Opening the JupyterNotebook on Genome Annotation with this Singularity Image
