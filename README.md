@@ -1,6 +1,6 @@
 # 2024 Workshop on Genomics, Cesky Krumlov: Genome Annotation
 
-This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the 2023 Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2023-workshop-on-genomics-cesky-krumlov/).
+This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2024-workshop-on-genomics-cesky-krumlov/).
 
 Authors: Katharina Hoff & Natalia Nenasheva
 
@@ -30,9 +30,9 @@ Contact: katharina.hoff@uni-greifswald.de
 ```
 mkdir your_name_GA # replace your_name_GA by your actual name, e.g. katharina_hoff_GA if your name is katharina hoff
 cd your_name_GA
-git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023.git
+git clone https://github.com/KatharinaHoff/GenomeAnnotation_Workshop.git
 ```
-This will create a folder called `GenomeAnnotation_Workshop2023` in your home directory. This folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb) and all the necessary data ☺️
+This will create a folder called `GenomeAnnotation_Workshop` in your home directory. This folder contains the JupyterNotebook for this course (GenomeAnnotation.ipynb) and all the necessary data ☺️
 
 The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a singularity file called `genome_annotation.sif` for you. You can find this file at `/home/genomics/workshop_materials/genome_annotation`.
 
@@ -58,7 +58,7 @@ DO NOT CLOSE YOUR TERMINAL! 🖥 It's essential that you keep it open. Click on 
 
 You can run code by clicking "Run" at the top of the screen
 
-<img width="650" alt="Screenshot 2023-05-14 at 12 33 24" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/d9374ebe-a77d-493d-95b5-d5ad1668e992">
+<img width="650" alt="Screenshot 2023-05-14 at 12 33 24" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop/assets/38511308/d9374ebe-a77d-493d-95b5-d5ad1668e992">
 
 Alternatively, you can click inside any box which starts with
 
@@ -70,7 +70,7 @@ and type Shift + Enter
 
 You can stop a code block running by pressing "Stop" (the black square)
 
-<img width="567" alt="Screenshot 2023-05-14 at 12 44 32" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/45e6d335-1476-408c-8ca5-ecf6a7456ba3">
+<img width="567" alt="Screenshot 2023-05-14 at 12 44 32" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop/assets/38511308/45e6d335-1476-408c-8ca5-ecf6a7456ba3">
 
 
 
@@ -97,14 +97,14 @@ In[ ]
 To create a new code block, you click on "Insert"
 
 
-## If you want to run this course after the Workshop on Genomics 2023
+## If you want to run this course after the Workshop on Genomics
 
 ### Obtaining the Singularity Image File
 
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
 ```
-singularity build genome_annotation.sif docker://katharinahoff/ceskykrumlov23-notebook:latest
+singularity build genome_annotation.sif docker://katharinahoff/bioinformatics-notebook:latest
 ```
 
 ### Opening the JupyterNotebook on Genome Annotation with this Singularity Image
@@ -126,7 +126,6 @@ This will display a link in your terminal that you may post into your web browse
 http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
 ```
 
-:bomb: The Docker container that is the foundation of this Singularity image file contains a license key for GeneMark-ETP that has an (unknown) expiration date (probably expiring less than a year from now). By using BRAKER1, BRAKER2, or BRAKER3 with any version of GeneMark-ES/ET/EP/ETP/S-T, you agree to the license terms of GeneMark-ES/ET/EP/ETP/S-T (terms available at http://exon.gatech.edu/GeneMark/license_download.cgi). If you want to use BRAKER1, BRAKER2, or BRAKER3 after the expiration date of the license key, we recommend that you use the official BRAKER container available from https://hub.docker.com/r/teambraker/braker3. That container will likely be updated with new license keys, in the future.
 
 ### Data sets
 
