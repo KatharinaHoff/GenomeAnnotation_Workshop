@@ -1,11 +1,12 @@
 When publishing results of this GALBA run, please cite the following sources:
 ------------------------------------------------------------------------------
 
-Hoff, K. J., Lomsadze, A., Borodovsky, M., & Stanke, M. (2019). Whole-genome annotation with BRAKER. In Gene Prediction (pp. 65-95). Humana, New York, NY.
+Bruna, T., Li, H., Guhlin, J., Honsel, D., Herbold, S., Stanke, M., Nenasheva, N., Ebel, M., Gabriel, L., & Hoff, K.J. (2023). GALBA: Genome Annotation with miniprot and AUGUSTUS. BMC Bioinformatics, 24(1):327.
 
 Li, H. (2023). Protein-to-genome alignment with miniprot. Bioinformatics, 39(1), btad014.
 
 Buchfink, B., Xie, C., & Huson, D. H. (2015). Fast and sensitive protein alignment using DIAMOND. Nature Methods, 12(1), 59.
 
 Stanke, M., Schöffmann, O., Morgenstern, B., & Waack, S. (2006). Gene prediction in eukaryotes with a generalized hidden Markov model that uses hints from external sources. BMC Bioinformatics, 7(1), 62.
-Hoff, K. and Stanke, M. 2019. “Predicting genes in single genomes with AUGUSTUS.“ Current Protocols in Bioinformatics, 65(1), e57.
+
+Hoff, K. J. and Stanke, M. (2019). “Predicting genes in single genomes with AUGUSTUS.“ Current Protocols in Bioinformatics, 65(1), e57.

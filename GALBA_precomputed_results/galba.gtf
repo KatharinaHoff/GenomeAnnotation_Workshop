@@ -915,12 +915,6 @@ X2	AUGUSTUS	intron	78561	78653	1	-	.	transcript_id "g50.t1"; gene_id "g50";
 X2	AUGUSTUS	CDS	78654	79858	1	-	0	transcript_id "g50.t1"; gene_id "g50";
 X2	AUGUSTUS	exon	78654	79858	.	-	.	transcript_id "g50.t1"; gene_id "g50";
 X2	AUGUSTUS	start_codon	79856	79858	.	-	0	transcript_id "g50.t1"; gene_id "g50";
-X2	AUGUSTUS	gene	79966	80250	1	+	.	g51
-X2	AUGUSTUS	transcript	79966	80250	1	+	.	g51.t1
-X2	AUGUSTUS	start_codon	79966	79968	.	+	0	transcript_id "g51.t1"; gene_id "g51";
-X2	AUGUSTUS	CDS	79966	80247	1	+	0	transcript_id "g51.t1"; gene_id "g51";
-X2	AUGUSTUS	exon	79966	80247	.	+	.	transcript_id "g51.t1"; gene_id "g51";
-X2	AUGUSTUS	stop_codon	80248	80250	.	+	0	transcript_id "g51.t1"; gene_id "g51";
 X2	AUGUSTUS	gene	80552	83456	1	-	.	g52
 X2	AUGUSTUS	transcript	80552	83456	1	-	.	g52.t1
 X2	AUGUSTUS	stop_codon	80552	80554	.	-	0	transcript_id "g52.t1"; gene_id "g52";
@@ -1041,12 +1035,6 @@ X2	AUGUSTUS	intron	105557	105724	1	+	.	transcript_id "g59.t1"; gene_id "g59";
 X2	AUGUSTUS	CDS	105725	106003	1	+	0	transcript_id "g59.t1"; gene_id "g59";
 X2	AUGUSTUS	exon	105725	106003	.	+	.	transcript_id "g59.t1"; gene_id "g59";
 X2	AUGUSTUS	stop_codon	106004	106006	.	+	0	transcript_id "g59.t1"; gene_id "g59";
-X2	AUGUSTUS	gene	107113	107421	0.61	+	.	g60
-X2	AUGUSTUS	transcript	107113	107421	0.61	+	.	g60.t1
-X2	AUGUSTUS	start_codon	107113	107115	.	+	0	transcript_id "g60.t1"; gene_id "g60";
-X2	AUGUSTUS	CDS	107113	107418	0.61	+	0	transcript_id "g60.t1"; gene_id "g60";
-X2	AUGUSTUS	exon	107113	107418	.	+	.	transcript_id "g60.t1"; gene_id "g60";
-X2	AUGUSTUS	stop_codon	107419	107421	.	+	0	transcript_id "g60.t1"; gene_id "g60";
 X2	AUGUSTUS	gene	111543	112493	1	-	.	g61
 X2	AUGUSTUS	transcript	111543	112493	1	-	.	g61.t1
 X2	AUGUSTUS	stop_codon	111543	111545	.	-	0	transcript_id "g61.t1"; gene_id "g61";
@@ -1125,12 +1113,6 @@ X2	AUGUSTUS	intron	124916	124994	1	+	.	transcript_id "g64.t1"; gene_id "g64";
 X2	AUGUSTUS	CDS	124995	125066	0.97	+	0	transcript_id "g64.t1"; gene_id "g64";
 X2	AUGUSTUS	exon	124995	125066	.	+	.	transcript_id "g64.t1"; gene_id "g64";
 X2	AUGUSTUS	intron	125067	125100	0.97	+	.	transcript_id "g64.t1"; gene_id "g64";
-X3	AUGUSTUS	gene	1	143	0.63	+	.	g65
-X3	AUGUSTUS	transcript	1	143	0.63	+	.	g65.t1
-X3	AUGUSTUS	intron	1	56	0.63	+	.	transcript_id "g65.t1"; gene_id "g65";
-X3	AUGUSTUS	CDS	57	140	0.63	+	0	transcript_id "g65.t1"; gene_id "g65";
-X3	AUGUSTUS	exon	57	140	.	+	.	transcript_id "g65.t1"; gene_id "g65";
-X3	AUGUSTUS	stop_codon	141	143	.	+	0	transcript_id "g65.t1"; gene_id "g65";
 X3	AUGUSTUS	gene	670	2616	1	-	.	g66
 X3	AUGUSTUS	transcript	670	2616	1	-	.	g66.t1
 X3	AUGUSTUS	stop_codon	670	672	.	-	0	transcript_id "g66.t1"; gene_id "g66";
