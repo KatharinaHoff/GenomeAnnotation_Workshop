@@ -1,0 +1,293 @@
+#**********************************************************************************
+#                               GALBA CONFIGURATION                               
+#**********************************************************************************
+# GALBA CALL: /opt/GALBA/scripts/galba.pl --workingdir=GALBA --genome=/opt/BRAKER/example/genome.fa --prot_seq=/opt/GALBA/example/proteins.fa --threads 8 --skipOptimize  # remember to remove both options if you are running a real job
+# Sat Jan  6 20:00:23 2024: galba.pl version 1.0.11
+# Sat Jan  6 20:00:23 2024: Creating directory /home/katharina/git/GenomeAnnotation_Workshop/GALBA.
+# Sat Jan  6 20:00:23 2024: Configuring of GALBA for using external tools...
+# Sat Jan  6 20:00:23 2024: Found environment variable $AUGUSTUS_CONFIG_PATH. Setting $AUGUSTUS_CONFIG_PATH to /usr/share/augustus/config/
+# Sat Jan  6 20:00:23 2024: Found environment variable $AUGUSTUS_BIN_PATH. Setting $AUGUSTUS_BIN_PATH to /usr/bin/
+# Sat Jan  6 20:00:23 2024: Found environment variable $AUGUSTUS_SCRIPTS_PATH. Setting $AUGUSTUS_SCRIPTS_PATH to /usr/share/augustus/scripts/
+# Sat Jan  6 20:00:23 2024: WARNING: $AUGUSTUS_CONFIG_PATH/species (in this case /usr/share/augustus/config//species ) is not writeable.
+# Sat Jan  6 20:00:23 2024: Checking whether we can write to /home/katharina with command:
+# Sat Jan  6 20:00:23 2024: Checking whether we can delete file in /home/katharina with command:
+*** IMPORTANT: Resetting $AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus because GALBA requires a writable location!
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $PYTHON3_PATH
+# Sat Jan  6 20:00:23 2024: Trying to guess $PYTHON3_PATH from location of python3 executable that is available in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $PYTHON3_PATH to /opt/conda/bin
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $DIAMOND_PATH
+# Sat Jan  6 20:00:23 2024: Trying to guess $DIAMOND_PATH from location of diamond executable that is available in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $DIAMOND_PATH to /opt/ETP/tools
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $MINIPROT_PATH (either variable does not exist, or the path given in variable does not exist). Will try to set this variable in a different way, later.
+# Sat Jan  6 20:00:23 2024: Trying to guess $MINIPROT_PATH from location of Miniprot executable in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $MINIPROT_PATH to /opt/miniprot
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $SCORER_PATH (either variable does not exist, or the path given in variable does not exist). Will try to set this variable in a different way, later.
+# Sat Jan  6 20:00:23 2024: Trying to guess $SCORER_PATH from location of miniprot_boundary_scorer executable that is available in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $SCORER_PATH to /opt/miniprot-boundary-scorer
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $MINIPROTHINT_PATH (either variable does not exist, or the path given in variable does not exist). Will try to set this variable in a different way, later.
+# Sat Jan  6 20:00:23 2024: Trying to guess $MINIPROTHINT_PATH from location of miniprothint.py executable that is available in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $MINIPROTHINT_PATH to /opt/miniprothint
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $CDBTOOLS_PATH
+# Sat Jan  6 20:00:23 2024: Trying to guess $CDBTOOLS_PATH from location of cdbfasta executable that is available in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $CDBTOOLS_PATH to /opt/cdbfasta
+# Sat Jan  6 20:00:23 2024: Did not find environment variable $TSEBRA_PATH
+# Sat Jan  6 20:00:23 2024: Trying to guess $TSEBRA_PATH from location of tsebra.py executable that is available in your $PATH
+# Sat Jan  6 20:00:23 2024: Setting $TSEBRA_PATH to /opt/TSEBRA/bin
+#*********
+# IMPORTANT INFORMATION: no species for identifying the AUGUSTUS  parameter set that will arise from this GALBA run was set. GALBA will create an AUGUSTUS parameter set with name Sp_OCRrHZKf8C. This parameter set can be used for future GALBA/AUGUSTUS prediction runs for the same species. It is usually not necessary to retrain AUGUSTUS with novel extrinsic data if a high quality parameter set already exists.
+#*********
+#**********************************************************************************
+#                               CREATING DIRECTORY STRUCTURE                       
+#**********************************************************************************
+# Sat Jan  6 20:00:23 2024: creating file that contains citations for this GALBA run at /home/katharina/git/GenomeAnnotation_Workshop/GALBA/what-to-cite.txt...
+# Sat Jan  6 20:00:23 2024: create working directory /home/katharina/git/GenomeAnnotation_Workshop/GALBA/species
+mkdir /home/katharina/git/GenomeAnnotation_Workshop/GALBA/species
+# Sat Jan  6 20:00:23 2024: create working directory /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors
+mkdir /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors
+# Sat Jan  6 20:00:23 2024: changing into working directory /home/katharina/git/GenomeAnnotation_Workshop/GALBA
+cd /home/katharina/git/GenomeAnnotation_Workshop/GALBA
+# Sat Jan  6 20:00:23 2024: Creating parameter template files for AUGUSTUS with new_species.pl
+# Sat Jan  6 20:00:23 2024: new_species.pl will create parameter files for species Sp_OCRrHZKf8C in /home/katharina/.augustus/species/Sp_OCRrHZKf8C
+/usr/bin/perl /usr/share/augustus/scripts/new_species.pl --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus 1> /dev/null 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/new_species.stderr
+# Sat Jan  6 20:00:23 2024: check_fasta_headers(): Checking fasta headers of file /opt/BRAKER/example/genome.fa
+# Sat Jan  6 20:00:23 2024: check_fasta_headers(): Checking fasta headers of file /opt/GALBA/example/proteins.fa
+# Sat Jan  6 20:00:23 2024: Assuming that this is not a DNA fasta file because other characters than A, T, G, C, N, a, t, g, c, n were contained. If this is supposed to be a DNA fasta file, check the content of your file! If this is supposed to be a protein fasta file, please ignore this message!
+#**********************************************************************************
+#            PROCESSING HINTS AND GENERATING TRAINING GENES                        
+#**********************************************************************************
+# Sat Jan  6 20:00:23 2024: Making protein hints
+# Sat Jan  6 20:00:23 2024: Changing to /home/katharina/git/GenomeAnnotation_Workshop/GALBA
+cd /home/katharina/git/GenomeAnnotation_Workshop/GALBA
+# Sat Jan  6 20:00:23 2024: running Miniprot to produce protein to genome alignments, first producing genome index:
+/opt/miniprot/miniprot -t8 -d /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.mpi /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot_index.stdout 2>>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/miniprot.stderr
+# Sat Jan  6 20:00:24 2024: running Miniprot to produce protein to genome alignments in aln format
+/opt/miniprot/miniprot -I -ut8 --outn=1 --aln /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.mpi /opt/GALBA/example/proteins.fa >> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.aln 2>> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/miniprot.stderr
+# Sat Jan  6 20:00:24 2024: Alignments from file /opt/GALBA/example/proteins.fa created.
+# Sat Jan  6 20:00:24 2024: /opt/miniprot-boundary-scorer/miniprot_boundary_scorer -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot.gff -s /opt/miniprot-boundary-scorer/blosum62.csv < /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.aln 
+# Sat Jan  6 20:00:24 2024: /opt/miniprothint/miniprothint.py /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot.gff --workdir /home/katharina/git/GenomeAnnotation_Workshop/GALBA --ignoreCoverage --topNperSeed 10 --minScoreFraction 0.5
+# Sat Jan  6 20:00:26 2024: moving /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot.gtf to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.gff
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot.gtf /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.gff
+# Sat Jan  6 20:00:26 2024: Converting alignments from file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.gff to hints
+# Sat Jan  6 20:00:26 2024: Converting protein alignment file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.gff to hints for AUGUSTUS
+/usr/bin/perl /opt/GALBA/scripts/aln2hints.pl --in=/home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.gff --out=/home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_hintsfile.aln2hints.temp.gff --prg=miniprot --priority=4
+# Sat Jan  6 20:00:26 2024: concatenating protein hints from /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_hintsfile.aln2hints.temp.gff to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.temp.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_hintsfile.aln2hints.temp.gff >> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.temp.gff
+# Sat Jan  6 20:00:26 2024: Checking for hints of src=C and with grp tags that should not be joined according to multiplicity
+# Sat Jan  6 20:00:26 2024: Joining hints that are identical (& from the same source) into multiplicity hints (input file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/tmp_merge_hints.gff)
+# Sat Jan  6 20:00:26 2024: sort hints of type prot
+cat /home/katharina/git/GenomeAnnotation_Workshop/GALBA/tmp_merge_hints.gff | sort -n -k 4,4 | sort -s -n -k 5,5 | sort -s -n -k 3,3 | sort -s -k 1,1 >/home/katharina/git/GenomeAnnotation_Workshop/GALBA/hints.prot.temp.sort.gff
+# Sat Jan  6 20:00:26 2024: join multiple hints
+/usr/bin/perl /usr/share/augustus/scripts/join_mult_hints.pl </home/katharina/git/GenomeAnnotation_Workshop/GALBA/hints.prot.temp.sort.gff >/home/katharina/git/GenomeAnnotation_Workshop/GALBA/tmp_merge_hints.gff 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/join_mult_hints.prot.stderr
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/tmp_merge_hints.gff /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.temp.gff
+# Sat Jan  6 20:00:26 2024: moving /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.temp.gff to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.gff
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.temp.gff /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.gff
+Deleting /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.temp.gff
+# Sat Jan  6 20:00:26 2024: joining hints files -> appending /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.gff to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.gff >> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff
+# Sat Jan  6 20:00:26 2024: Deleting /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_align_out.gff
+# Sat Jan  6 20:00:26 2024: Moving /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.tmp.gff to enable sorting
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.tmp.gff
+# Sat Jan  6 20:00:26 2024: Sorting hints file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.tmp.gff | sort -n -k 4,4 | sort -s -n -k 5,5 | sort -s -n -k 3,3 | sort -s -k 1,1 > /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff
+# Sat Jan  6 20:00:26 2024: Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.tmp.gff
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.tmp.gff
+#  Sat Jan  6 20:00:26 2024: using training genes from miniprothint 
+ln -s /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot_trainingGenes.gtf /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.gtf
+# Sat Jan  6 20:00:26 2024: rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff.
+#**********************************************************************************
+#                            TRAINING AUGUSTUS                                     
+#**********************************************************************************
+# Sat Jan  6 20:00:26 2024: training AUGUSTUS
+# Sat Jan  6 20:00:26 2024: Converting gtf file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.gtf to genbank file
+# Sat Jan  6 20:00:26 2024: Computing flanking region size for AUGUSTUS training genes
+# Sat Jan  6 20:00:26 2024: create genbank file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb
+/usr/bin/perl /usr/share/augustus/scripts/gff2gbSmallDNA.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.gtf /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa 1001 /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gff2gbSmallDNA.stderr 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/gff2gbSmallDNA.stderr
+#*********
+# INFORMATION: the size of flanking region used in this GALBA run is 1001
+#*********
+# Sat Jan  6 20:00:26 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb contains 259 genes.
+# Sat Jan  6 20:00:26 2024: Setting value of "stopCodonExcludedFromCDS" in /home/katharina/.augustus/species/Sp_OCRrHZKf8C/Sp_OCRrHZKf8C_parameters.cfg to "true"
+# Sat Jan  6 20:00:26 2024: Running etraining to catch gene structure inconsistencies:
+/usr/bin//etraining --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gbFilterEtraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/gbFilterEtraining.stderr
+# Sat Jan  6 20:00:27 2024: Filtering /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb file to remove inconsistent gene structures...
+/usr/bin/perl /usr/share/augustus/scripts/filterGenes.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/etrain.bad.lst /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.ff.gb 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/etrainFilterGenes.stderr
+# Sat Jan  6 20:00:27 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.ff.gb contains 228 genes.
+# Sat Jan  6 20:00:27 2024: BLAST or DIAMOND training gene structures against themselves:
+/usr/bin/perl /usr/share/augustus/scripts/aa2nonred.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.good.fa /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.good.nr.fa --DIAMOND_PATH=/opt/ETP/tools --cores=8 --diamond 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/aa2nonred.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/aa2nonred.stderr
+# Sat Jan  6 20:00:27 2024: Filtering nonredundant loci into /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.fff.gb:
+/usr/bin/perl /usr/share/augustus/scripts/filterGenesIn.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/nonred.loci.lst /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.ff.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.fff.gb 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/filterGenesIn.stderr
+# Sat Jan  6 20:00:27 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.fff.gb contains 226 genes.
+# Sat Jan  6 20:00:27 2024: Moving /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.fff.gb to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb:
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.fff.gb /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb
+# Sat Jan  6 20:00:27 2024: Splitting genbank file into train and test file
+#*********
+# WARNING: Number of reliable training genes is low (226). Recommended are at least 600 genes
+#*********
+/usr/bin/perl /usr/share/augustus/scripts/randomSplit.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb 75 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/randomSplit.stderr
+# Sat Jan  6 20:00:27 2024: /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.test will be used for measuring AUGUSTUS accuracy after training
+# Sat Jan  6 20:00:27 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.test contains 75 genes.
+# Sat Jan  6 20:00:27 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train contains 151 genes.
+/usr/bin/perl /usr/share/augustus/scripts/randomSplit.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train 75 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/randomSplit.stderr
+# Sat Jan  6 20:00:27 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train.train contains 76 genes.
+# Sat Jan  6 20:00:27 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train.test contains 75 genes.
+# Sat Jan  6 20:00:27 2024: /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train.test will be used or measuring AUGUSTUS accuracy during training with optimize_augustus.pl
+ /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train.train will be used for running etraining in optimize_augustus.pl (together with train.gb.train.test)
+ /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train will be used for running etraining (outside of optimize_augustus.pl)
+# Sat Jan  6 20:00:27 2024: first etraining
+/usr/bin//etraining --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train 1>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/firstetraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/firstetraining.stderr
+grep -c "exon doesn't end in stop codon" /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/firstetraining.stderr
+# Sat Jan  6 20:00:27 2024: Error rate of missing stop codon is 0
+# Sat Jan  6 20:00:27 2024: Adjusting stop-codon frequencies in species_parameters.cfg according to /home/katharina/git/GenomeAnnotation_Workshop/GALBA/firstetraining.stdout
+# Sat Jan  6 20:00:27 2024: Setting frequency of stop codons to tag=0.146, taa=0.391, tga=0.464.
+# Sat Jan  6 20:00:27 2024: first AUGUSTUS accuracy test
+/usr/bin//augustus --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.test >/home/katharina/git/GenomeAnnotation_Workshop/GALBA/firsttest.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/firsttest.stderr
+# Sat Jan  6 20:00:41 2024: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /home/katharina/git/GenomeAnnotation_Workshop/GALBA/firsttest.stdout)
+# Sat Jan  6 20:00:41 2024: The accuracy in round first is 0.7592
+# Sat Jan  6 20:00:41 2024: RUNNING AUGUSTUS
+# Sat Jan  6 20:00:41 2024: AUGUSTUS with hints
+# Sat Jan  6 20:00:41 2024: copy extrinsic file /opt/GALBA/scripts/cfg/galba.cfg to working directory
+cp /opt/GALBA/scripts/cfg/galba.cfg /home/katharina/git/GenomeAnnotation_Workshop/GALBA/species/Sp_OCRrHZKf8C/ex1.cfg
+/opt/conda/bin/python3 /home/katharina/git/GenomeAnnotation_Workshop/GALBA/pygustus_hints.py 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/pygustus_hints.out 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/pygustus_hints.err
+# Sat Jan  6 20:02:35 2024: AUGUSTUS prediction complete
+# Sat Jan  6 20:02:35 2024: Making a gtf file from /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gff | /usr/bin/perl -ne 'if(m/\tAUGUSTUS\t/) {print $_;}' | /usr/bin/perl /usr/share/augustus/scripts/gtf2gff.pl --printExon --out=/home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.tmp.gtf 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/gtf2gff.augustus.hints.gtf.stderr
+# Sat Jan  6 20:02:35 2024: Converting gtf file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf to genbank file
+# Sat Jan  6 20:02:35 2024: create genbank file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb
+/usr/bin/perl /usr/share/augustus/scripts/gff2gbSmallDNA.pl --good /home/katharina/git/GenomeAnnotation_Workshop/GALBA/good_training_genes.lst /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa 1001 /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gff2gbSmallDNA.stderr 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/gff2gbSmallDNA.stderr
+#*********
+# INFORMATION: the size of flanking region used in this GALBA run is 1001
+#*********
+# Sat Jan  6 20:02:36 2024: Splitting genbank file into train and test file
+#*********
+# WARNING: Number of reliable training genes is low (226). Recommended are at least 600 genes
+#*********
+/usr/bin/perl /usr/share/augustus/scripts/randomSplit.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb 75 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/randomSplit.stderr
+# Sat Jan  6 20:02:36 2024: /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.test will be used for measuring AUGUSTUS accuracy after training
+# Sat Jan  6 20:02:36 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.test contains 75 genes.
+# Sat Jan  6 20:02:36 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train contains 151 genes.
+/usr/bin/perl /usr/share/augustus/scripts/randomSplit.pl /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train 75 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/randomSplit.stderr
+# Sat Jan  6 20:02:36 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train.train contains 76 genes.
+# Sat Jan  6 20:02:36 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train.test contains 75 genes.
+# Sat Jan  6 20:02:36 2024: /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train.test will be used or measuring AUGUSTUS accuracy during training with optimize_augustus.pl
+ /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train.train will be used for running etraining in optimize_augustus.pl (together with train2.gb.train.test)
+ /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train will be used for running etraining (outside of optimize_augustus.pl)
+# Sat Jan  6 20:02:36 2024: first etraining
+/usr/bin//etraining --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train 1>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/firstetraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/firstetraining.stderr
+# Sat Jan  6 20:02:36 2024: second AUGUSTUS accuracy test
+/usr/bin//augustus --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.test >/home/katharina/git/GenomeAnnotation_Workshop/GALBA/secondtest.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/secondtest.stderr
+# Sat Jan  6 20:02:48 2024: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /home/katharina/git/GenomeAnnotation_Workshop/GALBA/secondtest.stdout)
+# Sat Jan  6 20:02:48 2024: The accuracy in round second is 0.775266666666667
+# Sat Jan  6 20:02:48 2024: Third etraining
+/usr/bin//etraining --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train 1>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/secondetraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/secondetraining.stderr
+# Sat Jan  6 20:02:49 2024: third AUGUSTUS accuracy test
+/usr/bin//augustus --species=Sp_OCRrHZKf8C --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.test >/home/katharina/git/GenomeAnnotation_Workshop/GALBA/thirdtest.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/thirdtest.stderr
+# Sat Jan  6 20:03:01 2024: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /home/katharina/git/GenomeAnnotation_Workshop/GALBA/thirdtest.stdout)
+# Sat Jan  6 20:03:01 2024: The accuracy in round third is 0.775266666666667
+#**********************************************************************************
+#                               PREDICTING GENES WITH AUGUSTUS (NO UTRS)           
+#**********************************************************************************
+# Sat Jan  6 20:03:01 2024: RUNNING AUGUSTUS
+# Sat Jan  6 20:03:01 2024: AUGUSTUS with hints
+# Sat Jan  6 20:03:01 2024: copy extrinsic file /opt/GALBA/scripts/cfg/galba.cfg to working directory
+cp /opt/GALBA/scripts/cfg/galba.cfg /home/katharina/git/GenomeAnnotation_Workshop/GALBA/species/Sp_OCRrHZKf8C/ex1.cfg
+/opt/conda/bin/python3 /home/katharina/git/GenomeAnnotation_Workshop/GALBA/pygustus_hints.py 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/pygustus_hints.out 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/pygustus_hints.err
+# Sat Jan  6 20:05:53 2024: AUGUSTUS prediction complete
+# Sat Jan  6 20:05:53 2024: Making a gtf file from /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gff | /usr/bin/perl -ne 'if(m/\tAUGUSTUS\t/) {print $_;}' | /usr/bin/perl /usr/share/augustus/scripts/gtf2gff.pl --printExon --out=/home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.tmp.gtf 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/gtf2gff.augustus.hints.gtf.stderr
+# Sat Jan  6 20:05:53 2024: Making a fasta file with protein sequences of /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf
+/opt/conda/bin/python3 /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/getAnnoFastaFromJoingenes.augustus.hints_tmp.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/getAnnoFastaFromJoingenes.augustus.hints_tmp.stderr
+# Sat Jan  6 20:05:54 2024: fixing AUGUSTUS genes with in frame stop codons...
+/opt/conda/bin/python3 /usr/share/augustus/scripts/fix_in_frame_stop_codon_genes.py -g /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa -t /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf -b /home/katharina/git/GenomeAnnotation_Workshop/GALBA/bad_genes.lst -o augustus.hints_fix_ifs_ -s Sp_OCRrHZKf8C -m off --UTR off --print_utr off -a /home/katharina/.augustus -C /opt/cdbfasta -A /usr/bin/ -S /usr/share/augustus/scripts/ -H /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hintsfile.gff -e /opt/GALBA/scripts/cfg/galba.cfg  > /home/katharina/git/GenomeAnnotation_Workshop/GALBA/fix_in_frame_stop_codon_genes_augustus.hints.log 2> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/fix_in_frame_stop_codon_genes_augustus.hints.err
+# Sat Jan  6 20:05:55 2024: Moving gene prediction file without in frame stop codons to location of original file (overwriting it)...
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints_fix_ifs_.gtf /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf
+# Sat Jan  6 20:05:55 2024: Deleting file with genes with in frame stop codons...
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/bad_genes.lst
+mv /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.tmp.gtf
+# Sat Jan  6 20:05:55 2024: deleting transcripts with CDS features on opposite strands and with overlapping CDS features...
+/opt/conda/bin/python3 /opt/GALBA/scripts/gtf_sanity_check.py -f /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.tmp.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/bad2.lst > /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gtf_sanity_check.log 2> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/gtf_sanity_check.err
+/opt/conda/bin/python3 /usr/share/augustus/scripts/filter_gtf_by_txid.py -g /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.tmp.gtf -l /home/katharina/git/GenomeAnnotation_Workshop/GALBA/bad2.lst -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf > /home/katharina/git/GenomeAnnotation_Workshop/GALBA/filter_gtf_by_txid.log 2> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/filter_gtf_by_txid.err
+# Sat Jan  6 20:05:55 2024: Making a fasta file with protein sequences of /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf
+/opt/conda/bin/python3 /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/getAnnoFastaFromJoingenes.augustus.hints_hints.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/getAnnoFastaFromJoingenes.augustus.hints_hints.stderr
+ln -s /opt/GALBA/example/proteins.fa /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_seq_all.fa
+/opt/conda/bin/python3 /opt/GALBA/scripts/filter_gtf_by_diamond_against_ref.py -r /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_seq_all.fa -g /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/galba.gtf -a augustus.hints.aa -t 8 -d /opt/ETP/tools 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/filter_gtf_by_diamond_against_ref.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/filter_gtf_by_diamond_against_ref.stderr
+# Sat Jan  6 20:05:56 2024: Making a fasta file with protein sequences of /home/katharina/git/GenomeAnnotation_Workshop/GALBA/galba.gtf
+/opt/conda/bin/python3 /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/GALBA/galba.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/GALBA/galba 1> /home/katharina/git/GenomeAnnotation_Workshop/GALBA/getAnnoFastaFromJoingenes.galba_.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/getAnnoFastaFromJoingenes.galba_.stderr
+# Sat Jan  6 20:05:56 2024: deleting empty files
+# Sat Jan  6 20:05:56 2024: find /home/katharina/git/GenomeAnnotation_Workshop/GALBA -empty
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/tmp_no_merge_hints.gff
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/fix_in_frame_stop_codon_genes_augustus.hints.log
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/highAlIntrons.gff
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/gtf2gff.augustus.hints.gtf.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/getAnnoFastaFromJoingenes.augustus.hints_tmp.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/filter_gtf_by_txid.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/filterGenesIn.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/etrainFilterGenes.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/firstetraining.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/fix_in_frame_stop_codon_genes_augustus.hints.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/getAnnoFastaFromJoingenes.augustus.hints_hints.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/new_species.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/find_python3_biopython.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/find_python3_pygustus.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/secondetraining.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/gtf_sanity_check.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/pygustus_hints.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/join_mult_hints.prot.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/find_python3_re.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/getAnnoFastaFromJoingenes.galba_.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/errors/randomSplit.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/bad2.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot_index.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/filter_gtf_by_txid.log
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gtf_sanity_check.log
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/getAnnoFastaFromJoingenes.galba_.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/getAnnoFastaFromJoingenes.augustus.hints_hints.stdout
+# Sat Jan  6 20:05:56 2024: deleting job lst files (if existing)
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/prot_hintsfile.aln2hints.temp.gff
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.ff.gb
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/aa2nonred.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/nonred.loci.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train.train
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/etrain.bad.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.tmp.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/secondetraining.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.good.nr.fa
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/fix_IFS_log_sjnltegc
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/firstetraining.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.train.test
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.good.fa
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gbFilterEtraining.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb.test
+rm /home/katharina/git/GenomeAnnotation_Workshop/GALBA/good_training_genes.lst
+python3 /opt/GALBA/scripts/galba_cleanup.py --wdir /home/katharina/git/GenomeAnnotation_Workshop/GALBA
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/firsttest.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/secondtest.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train.gb
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.fa.cidx
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/getAnnoFastaFromJoingenes.augustus.hints_tmp.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/traingenes.good.gtf
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/genome.mpi
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/pygustus_hints.out
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/pygustus_hints.py
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/gff2gbSmallDNA.stderr
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot_representatives.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.aln
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/protein_alignment_miniprot.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/hc.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprothint.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/thirdtest.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot_trainingGenes.gff
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/augustus.hints.gff to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train.test to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train.train to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.test to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb.train to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/train2.gb to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot_representatives.gtf to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/miniprot.gff to archive directory
+Moving file /home/katharina/git/GenomeAnnotation_Workshop/GALBA/filter_gtf_by_diamond_against_ref.stdout to archive directory
+#**********************************************************************************
+#                               GALBA RUN FINISHED                                
+#**********************************************************************************
