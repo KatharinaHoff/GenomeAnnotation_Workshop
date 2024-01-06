@@ -1,0 +1,20 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+211_t                -           1107 1001705at2759        -            270   2.8e-09   30.7   3.9   1   4     0.009       1.1    2.5   0.0    50    80   316   347   308   358 0.81 -
+211_t                -           1107 1001705at2759        -            270   2.8e-09   30.7   3.9   2   4   7.1e-05    0.0085    9.4   0.3    52    81   377   409   370   446 0.74 -
+211_t                -           1107 1001705at2759        -            270   2.8e-09   30.7   3.9   3   4   0.00043     0.052    6.8   0.1    51    82   461   493   453   512 0.84 -
+211_t                -           1107 1001705at2759        -            270   2.8e-09   30.7   3.9   4   4   7.7e-05    0.0093    9.3   0.0    51    78   554   582   518   602 0.64 -
+110_t                -            372 1001705at2759        -            270   8.2e-06   19.3   0.2   1   3   3.3e-06    0.0004   13.8   0.1    42   176    59   186    56   190 0.79 -
+110_t                -            372 1001705at2759        -            270   8.2e-06   19.3   0.2   2   3     0.045       5.4    0.2   0.0   184   184   278   278   240   315 0.51 -
+110_t                -            372 1001705at2759        -            270   8.2e-06   19.3   0.2   3   3     0.024       2.8    1.1   0.0    56    84   292   321   259   337 0.72 -
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      mb_downloads/eukaryota_odb10/hmms/1001705at2759.hmm
+# Target file:     /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2/bbc/genemark.aa
+# Option settings: /opt/compleasm_kit/hmmsearch --domtblout /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2/bbc/genemark/1001705at2759.out --cpu 1 mb_downloads/eukaryota_odb10/hmms/1001705at2759.hmm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2/bbc/genemark.aa 
+# Current dir:     /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2
+# Date:            Sat Jan  6 19:13:33 2024
+# [ok]

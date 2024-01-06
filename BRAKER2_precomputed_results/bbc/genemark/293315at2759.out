@@ -1,0 +1,19 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+189_t                -            622 293315at2759         -            638  2.1e-146  482.6   0.7   1   2    1e-146  1.2e-144  476.7   0.0   252   625    29   463    26   470 0.85 -
+189_t                -            622 293315at2759         -            638  2.1e-146  482.6   0.7   2   2    0.0012      0.14    4.1   0.1   605   629   497   522   467   526 0.66 -
+188_t                -            793 293315at2759         -            638   7.9e-27   87.5   3.1   1   4     0.003      0.37    2.7   0.0     2    26   345   377   344   388 0.77 -
+188_t                -            793 293315at2759         -            638   7.9e-27   87.5   3.1   2   4   7.1e-11   8.6e-09   27.9   0.0    29    89   453   541   440   586 0.76 -
+188_t                -            793 293315at2759         -            638   7.9e-27   87.5   3.1   3   4     2e-15   2.4e-13   43.0   0.0   115   168   646   708   637   716 0.90 -
+188_t                -            793 293315at2759         -            638   7.9e-27   87.5   3.1   4   4   8.1e-06   0.00098   11.2   0.1   166   195   726   756   722   761 0.88 -
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      mb_downloads/eukaryota_odb10/hmms/293315at2759.hmm
+# Target file:     /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2/bbc/genemark.aa
+# Option settings: /opt/compleasm_kit/hmmsearch --domtblout /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2/bbc/genemark/293315at2759.out --cpu 1 mb_downloads/eukaryota_odb10/hmms/293315at2759.hmm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2/bbc/genemark.aa 
+# Current dir:     /home/katharina/git/GenomeAnnotation_Workshop/BRAKER2
+# Date:            Sat Jan  6 19:13:34 2024
+# [ok]
