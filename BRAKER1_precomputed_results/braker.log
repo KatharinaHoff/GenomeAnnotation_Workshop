@@ -1,0 +1,387 @@
+#**********************************************************************************
+#                               BRAKER CONFIGURATION                               
+#**********************************************************************************
+# BRAKER CALL: /opt/BRAKER/scripts/braker.pl --workingdir=BRAKER1 --genome=/opt/BRAKER/example/genome.fa --bam=/opt/BRAKER/example/RNAseq.bam --softmasking --busco_lineage eukaryota_odb10 --threads 8 --gm_max_intergenic 10000 --skipOptimize
+# Sat Jan  6 19:13:38 2024: braker.pl version 3.0.7
+# Sat Jan  6 19:13:38 2024: Creating directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1.
+# Sat Jan  6 19:13:38 2024: Only RNA-Seq input detected, BRAKER will be executed in ET mode (BRAKER1).
+# Sat Jan  6 19:13:38 2024: Configuring of BRAKER for using external tools...
+# Sat Jan  6 19:13:38 2024: Trying to set $AUGUSTUS_CONFIG_PATH...
+# Sat Jan  6 19:13:38 2024: Found environment variable $AUGUSTUS_CONFIG_PATH.
+# Sat Jan  6 19:13:38 2024: Checking /usr/share/augustus/config/ as potential path for $AUGUSTUS_CONFIG_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $AUGUSTUS_CONFIG_PATH to /usr/share/augustus/config/!
+# Sat Jan  6 19:13:38 2024: WARNING: in file /opt/BRAKER/scripts/braker.pl at line 1931
+AUGUSTUS_CONFIG_PATH/species (in this case /usr/share/augustus/config//species) is not writeable. BRAKER will try to copy the AUGUSTUS config directory to a writeable location.
+# Sat Jan  6 19:13:38 2024: Trying to set $AUGUSTUS_BIN_PATH...
+# Sat Jan  6 19:13:38 2024: Found environment variable $AUGUSTUS_BIN_PATH.
+# Sat Jan  6 19:13:38 2024: Checking /usr/bin/ as potential path for $AUGUSTUS_BIN_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $AUGUSTUS_BIN_PATH to /usr/bin/!
+# Sat Jan  6 19:13:38 2024: Trying to set $AUGUSTUS_SCRIPTS_PATH...
+# Sat Jan  6 19:13:38 2024: Found environment variable $AUGUSTUS_SCRIPTS_PATH.
+# Sat Jan  6 19:13:38 2024: Checking /usr/share/augustus/scripts/ as potential path for $AUGUSTUS_SCRIPTS_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $AUGUSTUS_SCRIPTS_PATH to /usr/share/augustus/scripts/!
+# Sat Jan  6 19:13:38 2024: WARNING: BRAKER will copy the
+ AUGUSTUS_CONFIG folder into your home directory!
+# Sat Jan  6 19:13:38 2024: WARNING: $AUGUSTUS_CONFIG_PATH/species (in this case /usr/share/augustus/config//species ) is not writeable.
+*** IMPORTANT: Resetting $AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus because BRAKER requires a writable location!
+# Sat Jan  6 19:13:38 2024: Trying to set $PYTHON3_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $PYTHON3_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess PYTHON3_PATH from location of python3 executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /opt/conda/bin as potential path for $PYTHON3_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $PYTHON3_PATH to /opt/conda/bin!
+# Sat Jan  6 19:13:38 2024: Trying to set $COMPLEASM_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $COMPLEASM_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess COMPLEASM_PATH from location of compleasm.py executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /opt/compleasm_kit as potential path for $COMPLEASM_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $COMPLEASM_PATH to /opt/compleasm_kit!
+# Sat Jan  6 19:13:38 2024: Trying to set $GENEMARK_PATH...
+# Sat Jan  6 19:13:38 2024: Found environment variable $GENEMARK_PATH.
+# Sat Jan  6 19:13:38 2024: Checking /opt/ETP/bin as potential path for $GENEMARK_PATH.
+#*********
+# WARNING: Couldn't find gmes_petap.pl in /opt/ETP/bin. Will not set $GENEMARK_PATH to /opt/ETP/bin!
+#*********
+# Sat Jan  6 19:13:38 2024: Trying to guess GENEMARK_PATH from location of gmes_petap.pl executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /opt/ETP/bin/gmes as potential path for $GENEMARK_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $GENEMARK_PATH to /opt/ETP/bin/gmes!
+# Sat Jan  6 19:13:38 2024: Trying to set $BAMTOOLS_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $BAMTOOLS_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess BAMTOOLS_PATH from location of bamtools executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /usr/bin as potential path for $BAMTOOLS_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $BAMTOOLS_PATH to /usr/bin!
+# Sat Jan  6 19:13:38 2024: Trying to set $SAMTOOLS_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $SAMTOOLS_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess SAMTOOLS_PATH from location of samtools executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /usr/bin as potential path for $SAMTOOLS_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $SAMTOOLS_PATH to /usr/bin!
+# Sat Jan  6 19:13:38 2024: Trying to set $DIAMOND_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $DIAMOND_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess DIAMOND_PATH from location of diamond executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /opt/ETP/tools as potential path for $DIAMOND_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $DIAMOND_PATH to /opt/ETP/tools!
+# Sat Jan  6 19:13:38 2024: Trying to set $TSEBRA_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $TSEBRA_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess TSEBRA_PATH from location of tsebra.py executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /opt/TSEBRA/bin as potential path for $TSEBRA_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $TSEBRA_PATH to /opt/TSEBRA/bin!
+# Sat Jan  6 19:13:38 2024: Trying to set $CDBTOOLS_PATH...
+# Sat Jan  6 19:13:38 2024: Did not find environment variable $CDBTOOLS_PATH.
+# Sat Jan  6 19:13:38 2024: Trying to guess CDBTOOLS_PATH from location of cdbfasta executable that is available in your $PATH
+# Sat Jan  6 19:13:38 2024: Checking /opt/cdbfasta as potential path for $CDBTOOLS_PATH.
+# Sat Jan  6 19:13:38 2024: Success! Setting $CDBTOOLS_PATH to /opt/cdbfasta!
+#*********
+# IMPORTANT INFORMATION: no species for identifying the AUGUSTUS  parameter set that will arise from this BRAKER run was set. BRAKER will create an AUGUSTUS parameter set with name Sp_25. This parameter set can be used for future BRAKER/AUGUSTUS prediction runs for the same species. It is usually not necessary to retrain AUGUSTUS with novel extrinsic data if a high quality parameter set already exists.
+#*********
+#**********************************************************************************
+#                               CREATING DIRECTORY STRUCTURE                       
+#**********************************************************************************
+# Sat Jan  6 19:13:39 2024: creating file that contains citations for this BRAKER run at /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/what-to-cite.txt...
+# Sat Jan  6 19:13:39 2024: create working directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET.
+mkdir /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET
+# Sat Jan  6 19:13:39 2024: create working directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/species
+mkdir /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/species
+# Sat Jan  6 19:13:39 2024: create working directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors
+mkdir /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors
+# Sat Jan  6 19:13:39 2024: changing into working directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1
+cd /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1
+# Sat Jan  6 19:13:39 2024: getting GC content of the genome
+/opt/BRAKER/scripts/get_gc_content.py --sequences /opt/BRAKER/example/genome.fa --print_sequence_length 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/gc_content.out 2> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/gc_content.stderr
+# Sat Jan  6 19:13:39 2024: Creating parameter template files for AUGUSTUS with new_species.pl
+# Sat Jan  6 19:13:39 2024: new_species.pl will create parameter files for species Sp_25 in /home/katharina/.augustus/species/Sp_25
+/usr/bin/perl /usr/share/augustus/scripts/new_species.pl --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus 1> /dev/null 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/new_species.stderr
+# Sat Jan  6 19:13:39 2024: check_fasta_headers(): Checking fasta headers of file /opt/BRAKER/example/genome.fa
+#**********************************************************************************
+#                               PROCESSING HINTS                                   
+#**********************************************************************************
+# Sat Jan  6 19:13:39 2024: Running compleasm and converting the output to hints
+/opt/conda/bin/python3 /usr/share/augustus/scripts/compleasm_to_hints.py -p /opt/compleasm_kit/compleasm.py -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -d eukaryota_odb10 -t 8 -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/compleasm_hints.gff 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/compleasm_to_hints.stderr 2>&1
+# Sat Jan  6 19:19:56 2024: Generating hints from compleasm (genome level) finished.
+# Sat Jan  6 19:19:56 2024: Converting bam files to hints
+# Sat Jan  6 19:19:56 2024: Checking bam headers
+# Sat Jan  6 19:19:56 2024: create header file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/RNAseq_header.sam
+/usr/bin/bamtools header -in /opt/BRAKER/example/RNAseq.bam > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/RNAseq_header.sam
+# Sat Jan  6 19:19:56 2024: Deleting SAM header file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/RNAseq_header.sam (will not be needed from here on)
+# Sat Jan  6 19:19:56 2024: Deleting /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/RNAseq_new_header.sam
+# Sat Jan  6 19:19:56 2024: make hints from BAM file /opt/BRAKER/example/RNAseq.bam
+/usr/bin//bam2hints --intronsonly --in=/opt/BRAKER/example/RNAseq.bam --out=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bam2hints.temp.0.gff 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/bam2hints.0.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/bam2hints.0.stderr
+# Sat Jan  6 19:20:26 2024: add hints from BAM file /opt/BRAKER/example/RNAseq.bam to hints file
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bam2hints.temp.0.gff >>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.temp.gff
+# Sat Jan  6 19:20:26 2024: Checking for hints of src=C and with grp tags that should not be joined according to multiplicity
+# Sat Jan  6 19:20:26 2024: Joining hints that are identical (& from the same source) into multiplicity hints (input file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/tmp_merge_hints.gff)
+# Sat Jan  6 19:20:26 2024: sort hints of type rnaseq
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/tmp_merge_hints.gff | sort -n -k 4,4 | sort -s -n -k 5,5 | sort -s -n -k 3,3 | sort -s -k 1,1 >/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hints.rnaseq.temp.sort.gff
+# Sat Jan  6 19:20:26 2024: join multiple hints
+/usr/bin/perl /usr/share/augustus/scripts/join_mult_hints.pl </home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hints.rnaseq.temp.sort.gff >/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/tmp_merge_hints.gff 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/join_mult_hints.rnaseq.stderr
+mv /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/tmp_merge_hints.gff /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.temp.gff
+# Sat Jan  6 19:20:26 2024: filter introns, find strand and change score to 'mult' entry
+/usr/bin/perl /opt/BRAKER/scripts/filterIntronsFindStrand.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.temp.gff --score 1>>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.gff 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterIntronsFindStrand.stderr
+# Sat Jan  6 19:20:26 2024: rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.temp.gff
+# Sat Jan  6 19:20:26 2024: Preparing hints for running GeneMark
+# Sat Jan  6 19:20:26 2024: Filtering intron hints for GeneMark from /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.gff...
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff.rnaseq | sort -n -k 4,4 | sort -s -n -k 5,5 | sort -s -k 3,3 | sort -s -k 1,1 | /usr/share/augustus/scripts/join_mult_hints.pl > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff.rnaseq.tmp
+mv /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff.rnaseq.tmp /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff
+#**********************************************************************************
+#                              RUNNING GENEMARK-EX                                 
+#**********************************************************************************
+# Sat Jan  6 19:20:26 2024: Checking whether file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff contains enough hints and sufficient multiplicity information...
+# Sat Jan  6 19:20:26 2024: Executing GeneMark-ET
+# Sat Jan  6 19:20:26 2024: changing into GeneMark-ET directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET
+cd /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET
+# Sat Jan  6 19:20:26 2024: Executing gmes_petap.pl
+/usr/bin/perl /opt/ETP/bin/gmes/gmes_petap.pl --verbose --sequence=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa --ET=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff --cores=8 --gc_donor 0.001 --max_intergenic=10000 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/GeneMark-ET.stderr
+# Sat Jan  6 19:22:20 2024: change to working directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1
+cd /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1
+# Sat Jan  6 19:22:20 2024: Filtering output of GeneMark for generating training genes for AUGUSTUS
+# Sat Jan  6 19:22:20 2024: Checking whether hintsfile contains single exon CDSpart hints or start/stop hints
+# Sat Jan  6 19:22:20 2024: sorting GeneMark predictions in /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf
+/opt/conda/bin/python3 /opt/BRAKER/scripts/sortGeneMark.py /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf.sorted 2> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/sortGeneMark.err
+mv /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf.sorted /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf
+# Sat Jan  6 19:22:20 2024: filtering GeneMark genes by intron hints
+/usr/bin/perl /opt/BRAKER/scripts/filterGenemark.pl --genemark=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf --hints=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.gff --randomSeed=1 --singleCDSfile=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/singlecds.hints 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/filterGenemark.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterGenemark.stderr
+# Sat Jan  6 19:22:21 2024: Ensuring at least 4000 genes in training file 
+/opt/conda/bin/python3 /opt/BRAKER/scripts/ensure_n_training_genes.py --goodGenes /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.good.gtf --badGenes /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.bad.gtf --N 4000 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/ensure_min_n_training_genes.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/ensure_min_n_training_genes.stderr
+#Sat Jan  6 19:22:21 2024: downsampling good genemark genes according to poisson distribution with Lambda 2:
+/usr/bin/perl /opt/BRAKER/scripts/downsample_traingenes.pl --in_gtf=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.good.gtf --out_gtf=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.d.gtf --lambda=2 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/downsample_traingenes.log 2> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/downsample_traingenes.err
+#**********************************************************************************
+#                               TRAIN AUGUSTUS                                     
+#**********************************************************************************
+# Sat Jan  6 19:22:21 2024: training AUGUSTUS
+# Sat Jan  6 19:22:21 2024: creating softlink from /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf to /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.gtf.
+ln -s GeneMark-ET/genemark.gtf /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.gtf
+# Sat Jan  6 19:22:21 2024: Converting gtf file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.gtf to genbank file
+# Sat Jan  6 19:22:21 2024: Computing flanking region size for AUGUSTUS training genes
+# Sat Jan  6 19:22:21 2024: create genbank file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb
+/usr/bin/perl /usr/share/augustus/scripts/gff2gbSmallDNA.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.gtf /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa 1047 /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/traingenes.gtf_gff2gbSmallDNA.stderr
+#*********
+# INFORMATION: the size of flanking region used in this BRAKER run is 1047. You might need this value if you later add a UTR training on top of an already existing BRAKER run.
+#*********
+# Sat Jan  6 19:22:21 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb contains 264 genes.
+#  Sat Jan  6 19:22:21 2024: concatenating good and downsampled GeneMark training genes to /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/good_genes.lst.
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.d.gtf > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/good_genes.lst
+# Sat Jan  6 19:22:21 2024: Filtering train.gb for "good" mRNAs:
+/usr/bin/perl /usr/share/augustus/scripts/filterGenesIn_mRNAname.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/good_genes.lst /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.f.gb 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterGenesIn_mRNAname.stderr
+# Sat Jan  6 19:22:21 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.f.gb contains 200 genes.
+# Sat Jan  6 19:22:21 2024: Running etraining to catch gene structure inconsistencies:
+/usr/bin//etraining --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.f.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/gbFilterEtraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/gbFilterEtraining.stderr
+# Sat Jan  6 19:22:21 2024: Filtering /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.f.gb file to remove inconsistent gene structures...
+/usr/bin/perl /usr/share/augustus/scripts/filterGenes.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/etrain.bad.lst /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.f.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.ff.gb 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/etrainFilterGenes.stderr
+# Sat Jan  6 19:22:21 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.ff.gb contains 200 genes.
+# Sat Jan  6 19:22:22 2024: BLAST or DIAMOND training gene structures against themselves:
+/usr/bin/perl /usr/share/augustus/scripts/aa2nonred.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.good.fa /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.good.nr.fa --DIAMOND_PATH=/opt/ETP/tools --cores=8 --diamond 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aa2nonred.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/aa2nonred.stderr
+# Sat Jan  6 19:22:22 2024: Filtering nonredundant loci into /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.fff.gb:
+/usr/bin/perl /usr/share/augustus/scripts/filterGenesIn.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/nonred.loci.lst /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.ff.gb 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.fff.gb 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterGenesIn.stderr
+# Sat Jan  6 19:22:22 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.fff.gb contains 199 genes.
+# Sat Jan  6 19:22:22 2024: Moving /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.fff.gb to /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb:
+mv /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.fff.gb /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb
+# Sat Jan  6 19:22:22 2024: Splitting genbank file into train and test file
+#*********
+# WARNING: Number of reliable training genes is low (199). Recommended are at least 600 genes
+#*********
+/usr/bin/perl /usr/share/augustus/scripts/randomSplit.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb 66 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/randomSplit.stderr
+# Sat Jan  6 19:22:22 2024: /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.test will be used for measuring AUGUSTUS accuracy after training
+# Sat Jan  6 19:22:22 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.test contains 66 genes.
+# Sat Jan  6 19:22:22 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train contains 133 genes.
+/usr/bin/perl /usr/share/augustus/scripts/randomSplit.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train 66 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/randomSplit.stderr
+# Sat Jan  6 19:22:22 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train.train contains 67 genes.
+# Sat Jan  6 19:22:22 2024: Genbank format file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train.test contains 66 genes.
+# Sat Jan  6 19:22:22 2024: /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train.test will be used or measuring AUGUSTUS accuracy during training with optimize_augustus.pl
+ /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train.train will be used for running etraining in optimize_augustus.pl (together with train.gb.train.test)
+ /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train will be used for running etraining (outside of optimize_augustus.pl)
+# Sat Jan  6 19:22:22 2024: Setting value of "stopCodonExcludedFromCDS" in /home/katharina/.augustus/species/Sp_25/Sp_25_parameters.cfg to "true"
+# Sat Jan  6 19:22:22 2024: first etraining
+/usr/bin//etraining --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firstetraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/firstetraining.stderr
+grep -c "exon doesn't end in stop codon" /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/firstetraining.stderr
+# Sat Jan  6 19:22:22 2024: Error rate of missing stop codon is 0.947368421052632
+# Sat Jan  6 19:22:22 2024: The appropriate value for "stopCodonExcludedFromCDS" seems to be "false".
+# Sat Jan  6 19:22:22 2024: Setting value of "stopCodonExcludedFromCDS" in /home/katharina/.augustus/species/Sp_25/Sp_25_parameters.cfg to "false"
+# Sat Jan  6 19:22:22 2024: Running etraining again
+/usr/bin//etraining --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firstetraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/firstetraining.stderr
+# Sat Jan  6 19:22:23 2024: Adjusting stop-codon frequencies in species_parameters.cfg according to /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firstetraining.stdout
+# Sat Jan  6 19:22:23 2024: Setting frequency of stop codons to tag=0.211, taa=0.353, tga=0.436.
+# Sat Jan  6 19:22:23 2024: First AUGUSTUS accuracy test
+/usr/bin//augustus --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.test 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firsttest.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/firsttest.stderr
+# Sat Jan  6 19:22:36 2024: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firsttest.stdout)
+# Sat Jan  6 19:22:36 2024: The accuracy after initial training (no optimize_augustus.pl, no CRF) is 0.6684
+# Sat Jan  6 19:22:36 2024: Second etraining
+/usr/bin//etraining --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train 1>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/secondetraining.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/secondetraining.stderr
+# Sat Jan  6 19:22:36 2024: Second AUGUSTUS accuracy test
+/usr/bin//augustus --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.test >/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/secondtest.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/secondtest.stderr
+# Sat Jan  6 19:22:50 2024: Computing accuracy of AUGUSTUS prediction (in test file derived from predictions on training data set stored in /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/secondtest.stdout)
+# Sat Jan  6 19:22:50 2024: The accuracy after training (after optimize_augustus.pl, no CRF) is 0.6684
+# Sat Jan  6 19:22:50 2024: Copying optimized parameters to working directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/species
+cp -r /home/katharina/.augustus/species/Sp_25 /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/species
+#**********************************************************************************
+#                               PREDICTING GENES WITH AUGUSTUS (NO UTRS)           
+#**********************************************************************************
+# Sat Jan  6 19:22:50 2024: RUNNING AUGUSTUS
+# Sat Jan  6 19:22:50 2024: Preparing genome for running AUGUSTUS in parallel
+# Sat Jan  6 19:22:50 2024: Creating directory for storing AUGUSTUS files (hints, temporarily) /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome_split.
+# Sat Jan  6 19:22:50 2024: splitting genome file in smaller parts for parallel execution of AUGUSTUS prediction
+/usr/bin/perl /usr/share/augustus/scripts/splitMfasta.pl /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa --outputpath=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome_split 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/splitMfasta.stderr
+cd /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome_split; for f in genome.split.*; do NAME=`grep ">" $f`; mv $f ${NAME#>}.fa; done; cd ..
+# Sat Jan  6 19:22:50 2024: Split genome file in 8 parts, finished.
+# Sat Jan  6 19:22:50 2024: copy extrinsic file /opt/BRAKER/scripts/cfg/rnaseq.cfg to working directory
+cp /opt/BRAKER/scripts/cfg/rnaseq.cfg /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/species/Sp_25/ex1.cfg
+# Sat Jan  6 19:22:50 2024: Making AUGUSTUS jobs with hintsfile /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.gff, cfgFile /opt/BRAKER/scripts/cfg/rnaseq.cfg, UTR status off, and hintId hints
+# Sat Jan  6 19:22:50 2024: Creating directory for storing AUGUSTUS files (hints, temporarily) /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp.
+# Sat Jan  6 19:22:50 2024: creating /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints.lst for AUGUSTUS jobs
+# Sat Jan  6 19:22:50 2024: creating AUGUSTUS jobs (with hints)
+cd /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1
+/usr/bin/perl /usr/share/augustus/scripts/createAugustusJoblist.pl --sequences=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints.lst --wrap="#!/bin/bash" --overlap=500000 --chunksize=2500000 --outputdir=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp --joblist=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hints.job.lst --jobprefix=aug_hints_ --partitionHints --command "/usr/bin//augustus --species=Sp_25 --AUGUSTUS_CONFIG_PATH=/home/katharina/.augustus --extrinsicCfgFile=/opt/BRAKER/scripts/cfg/rnaseq.cfg --alternatives-from-evidence=true --UTR=off --exonnames=on --codingseq=on --allow_hinted_splicesites=gcag,atac " 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/createAugustusJoblist_hints.stderr
+cd ..
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS jobs from /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hints.job.lst
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 1
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_1
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 2
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_2
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 3
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_3
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 4
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_4
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 5
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_5
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 6
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_6
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 7
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_7
+# Sat Jan  6 19:22:50 2024: Running AUGUSTUS job 8
+bash /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_8
+# Sat Jan  6 19:23:23 2024: Joining AUGUSTUS predictions in directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp
+# Sat Jan  6 19:23:23 2024: Concatenating AUGUSTUS output files in /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/7.001.X8.fa.1..124361.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/8.001.X6.fa.1..125100.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/2.001.X1.fa.1..125040.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/3.001.X3.fa.1..125100.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/1.001.X2.fa.1..125100.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/6.001.X5.fa.1..125100.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/4.001.X7.fa.1..125100.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp/5.001.X4.fa.1..125100.gff >> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+/usr/bin/perl /usr/share/augustus/scripts/join_aug_pred.pl < /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gff
+# Sat Jan  6 19:23:23 2024: Deleting /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus_tmp
+# Sat Jan  6 19:23:23 2024: Deleting /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.tmp1.gff
+# Sat Jan  6 19:23:23 2024: deleting files from AUGUSTUS parallelization
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_8
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_3
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_1
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_4
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_6
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_7
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_2
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints_5
+# Sat Jan  6 19:23:23 2024: Making a gtf file from /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gff
+cat /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gff | /usr/bin/perl -ne 'if(m/\tAUGUSTUS\t/) {print $_;}' | /usr/bin/perl /usr/share/augustus/scripts/gtf2gff.pl --printExon --out=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.tmp.gtf 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/gtf2gff.augustus.hints.gtf.stderr
+# Sat Jan  6 19:23:23 2024: Making a fasta file with protein sequences of /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf
+/opt/conda/bin/python3 /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/getAnnoFastaFromJoingenes.augustus.hints_tmp.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/getAnnoFastaFromJoingenes.augustus.hints_tmp.stderr
+# Sat Jan  6 19:23:24 2024: fixing AUGUSTUS genes with in frame stop codons...
+/opt/conda/bin/python3 /usr/share/augustus/scripts/fix_in_frame_stop_codon_genes.py -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -t /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf -b /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bad_genes.lst -o augustus.hints_fix_ifs_ -s Sp_25 -m off --UTR off --print_utr off -a /home/katharina/.augustus -C /opt/cdbfasta -A /usr/bin/ -S /usr/share/augustus/scripts/ -H /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hintsfile.gff -e /opt/BRAKER/scripts/cfg/rnaseq.cfg  > /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/fix_in_frame_stop_codon_genes_augustus.hints.log 2> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/fix_in_frame_stop_codon_genes_augustus.hints.err
+# Sat Jan  6 19:23:25 2024: Moving gene prediction file without in frame stop codons to location of original file (overwriting it)...
+mv /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints_fix_ifs_.gtf /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf
+# Sat Jan  6 19:23:25 2024: Deleting file with genes with in frame stop codons...
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bad_genes.lst
+# Sat Jan  6 19:23:25 2024: Making a fasta file with protein sequences of /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf
+/opt/conda/bin/python3 /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/getAnnoFastaFromJoingenes.augustus.hints_hints.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/getAnnoFastaFromJoingenes.augustus.hints_hints.stderr
+# Sat Jan  6 19:23:25 2024: AUGUSTUS prediction complete
+# Sat Jan  6 19:23:25 2024: Trying to create merged gene set from GeneMark-EX and AUGUSTUS predictions (braker.gtf/braker.utr.gtf)...
+# Sat Jan  6 19:23:25 2024: Trying to create combined gene set with TSEBRA...
+/opt/TSEBRA/bin/tsebra.py --keep_gtf /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gtf,/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.multi_anchored.gtf,/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.single_anchored.gtf --cfg /opt/TSEBRA/bin/../config/braker3.cfg --out /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf -q 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/tsebra.stderr
+mv /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf_temp
+# Sat Jan  6 19:23:26 2024: Making a fasta file with protein sequences of /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf
+/opt/conda/bin/python3 /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/getAnnoFastaFromJoingenes.braker_.stdout 2>/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/getAnnoFastaFromJoingenes.braker_.stderr
+# Sat Jan  6 19:23:27 2024: selecting best gene set by BUSCO completeness via compleasm.
+# Sat Jan  6 19:23:27 2024: /opt/conda/bin/python3 /opt/TSEBRA/bin/best_by_compleasm.py -m /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc -d /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1 -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -t 8 -p eukaryota_odb10 -y /opt/TSEBRA/bin/tsebra.py -f /usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py 1> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/best_by_compleasm.log 2> /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/best_by_compleasm.err
+# Sat Jan  6 19:23:33 2024: deleting empty files
+# Sat Jan  6 19:23:33 2024: find /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1 -empty
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/tmp_no_merge_hints.gff
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/fix_in_frame_stop_codon_genes_augustus.hints.log
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/downsample_traingenes.log
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/ensure_min_n_training_genes.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/etrain.bad.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/bam2hints.0.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/gtf2gff.augustus.hints.gtf.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/getAnnoFastaFromJoingenes.augustus.hints_tmp.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/gc_content.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/tsebra_rename.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterGenemark.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/bam2hints.0.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/downsample_traingenes.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/sortGeneMark.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterGenesIn.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/getAnnoFastaFromJoingenes.braker_.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/etrainFilterGenes.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/firstetraining.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/fix_in_frame_stop_codon_genes_augustus.hints.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/getAnnoFastaFromJoingenes.augustus.hints_hints.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/tsebra.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/traingenes.gtf_gff2gbSmallDNA.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/new_species.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/find_python3_biopython.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/splitMfasta.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/join_mult_hints.rnaseq.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/gbFilterEtraining.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/secondetraining.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/GeneMark-ET.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/firsttest.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterIntronsFindStrand.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/createAugustusJoblist_hints.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/find_python3_re.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/secondtest.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/randomSplit.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/filterGenesIn_mRNAname.stderr
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/errors/best_by_compleasm.err
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/mb_downloads/eukaryota_odb10.done
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/mb_downloads/file_versions.tsv.done
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/mb_downloads/placement_files.done
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.bad.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.single_anchored.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/getAnnoFastaFromJoingenes.braker_.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc/protein_hmmsearch.done
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/getAnnoFastaFromJoingenes.augustus.hints_hints.stdout
+# Sat Jan  6 19:23:33 2024: deleting job lst files (if existing)
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/hints.job.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.f.gb
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.ff.gb
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.good.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aa2nonred.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/good_genes.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/nonred.loci.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train.train
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.tmp.gtf
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/secondetraining.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.good.nr.fa
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/singlecds.hints
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/fix_IFS_log_rrzdvtki
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firstetraining.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/aug_hints.lst
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.train.test
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/traingenes.good.fa
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/gbFilterEtraining.stdout
+rm /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb.test
+/usr/bin/perl /opt/BRAKER/scripts/braker_cleanup.pl --wdir=/home/katharina/git/GenomeAnnotation_Workshop/BRAKER1
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/firsttest.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/secondtest.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/train.gb
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.d.gtf
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.f.good.gtf
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.c.gtf
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.average_gene_length.out
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/gmes.log
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/run.cfg
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/filterGenemark.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa.cidx
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/getAnnoFastaFromJoingenes.augustus.hints_tmp.stdout
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/compleasm_hints.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf_temp
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genemark_hintsfile.gff
+Deleting file /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/gc_content.out
+Deleting directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/data
+Deleting directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/info
+Deleting directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/output
+Deleting directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/run
+Deleting directory /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/mb_downloads
+#**********************************************************************************
+#                               BRAKER RUN FINISHED                                
+#**********************************************************************************
