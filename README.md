@@ -6,6 +6,16 @@ Authors: Katharina Hoff & Natalia Nenasheva
 
 Contact: katharina.hoff@uni-greifswald.de
 
+## Links needed during lecture
+
+(Slide number may be slightly off if you look at the slides on GitHub due to remove slides, they correspond to what's shown on the projector!)
+
+Slide 35: Tool name collection https://www.menti.com/7zgomub8sx
+
+Slide 38: Tool categorization https://padlet.com/katharinahoff1/tools-for-structural-annotation-of-protein-coding-genes-c8desilwro11qp0h
+
+Slide 78: Poll on understanding annotation methods
+
 ## Course contents
 
    * theory: repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
@@ -102,12 +112,6 @@ To create a new code block, you click on "Insert"
 ### Obtaining the Singularity Image File
 
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
-
-```
-singularity build genome_annotation.sif docker://katharinahoff/bioinformatics-notebook:latest
-```
-
-### Opening the JupyterNotebook on Genome Annotation with this Singularity Image
 
 ```
 # execute from your user home directory, should not be a group drive
