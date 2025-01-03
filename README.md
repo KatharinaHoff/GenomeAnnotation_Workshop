@@ -1,6 +1,6 @@
-# 2024 Workshop on Genomics, Cesky Krumlov: Genome Annotation
+# 2025 Workshop on Genomics, Cesky Krumlov: Genome Annotation
 
-This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2024-workshop-on-genomics-cesky-krumlov/).
+This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2025-workshop-on-genomics-cesky-krumlov/).
 
 Authors: Katharina Hoff & Natalia Nenasheva
 
@@ -114,6 +114,10 @@ To create a new code block, you click on "Insert"
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
 ```
+singularity build genome-annotation.sif docker://katharinahoff/bioinformatics-notebook
+```
+
+```
 # execute from your user home directory, should not be a group drive
 singularity exec --cleanenv --bind /home/genomics/workshop_materials/genome_annotation:/home/genomics/workshop_materials/genome_annotation --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan /home/genomics/workshop_materials/genome_annotation/genome_annotation.sif jupyter notebook --no-browser --ip=127.0.0.1
 ```
@@ -130,6 +134,7 @@ This will display a link in your terminal that you may post into your web browse
 http://127.0.0.1:8888/?token=4aff4819888e4afd61a63b3015f8a1f816deea84efe2cd3f
 ```
 
+In pratice, I recommend that you do not continue to work with the workshop container but use the native BRAKER or Galba containers, instead. These tools are distributed separately, and the native containers may contain updates that help you.
 
 ### Data sets
 
