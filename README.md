@@ -6,16 +6,6 @@ Authors: Katharina Hoff & Natalia Nenasheva
 
 Contact: katharina.hoff@uni-greifswald.de
 
-## Links needed during lecture
-
-(Slide number may be slightly off if you look at the slides on GitHub due to remove slides, they correspond to what's shown on the projector!)
-
-Slide 35: Tool name collection https://www.menti.com/7zgomub8sx
-
-Slide 38: Tool categorization https://padlet.com/katharinahoff1/tools-for-structural-annotation-of-protein-coding-genes-c8desilwro11qp0h
-
-Slide 78: Poll on understanding annotation methods
-
 ## Course contents
 
    * theory: repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
