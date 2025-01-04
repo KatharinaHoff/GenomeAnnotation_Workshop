@@ -1,6 +1,6 @@
 # 2025 Workshop on Genomics, Cesky Krumlov: Genome Annotation
 
-This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2025-workshop-on-genomics-cesky-krumlov/).
+This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2025-workshop-on-genomics/).
 
 Authors: Katharina Hoff & Natalia Nenasheva
 
