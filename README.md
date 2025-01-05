@@ -104,7 +104,7 @@ To create a new code block, you click on "Insert"
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
 ```
-singularity build genome-annotation.sif docker://katharinahoff/bioinformatics-notebook
+singularity build genome_annotation.sif docker://katharinahoff/bioinformatics-notebook
 ```
 
 ```
