@@ -6,6 +6,8 @@ Authors: Katharina Hoff & Natalia Nenasheva
 
 Contact: katharina.hoff@uni-greifswald.de
 
+Link to wall with tool names: https://uni-greifswald.taskcards.app/#/board/5a8b701b-06a8-4023-8381-1e55d00fca64?token=0ef81721-81ce-4f76-8e23-c1fb4c1f8156
+
 ## Course contents
 
    * theory: repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
