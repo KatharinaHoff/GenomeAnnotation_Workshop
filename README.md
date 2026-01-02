@@ -1,8 +1,8 @@
-# 2025 Workshop on Genomics, Cesky Krumlov: Genome Annotation
+# 2026 Workshop on Genomics, Cesky Krumlov: Genome Annotation
 
-This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, and TSEBRA. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2025-workshop-on-genomics/).
+This repository contains course materials for a workshop on structural genome annotation with BRAKER, GALBA, TSEBRA, and Tiberius. The course is part of the Workshop on Genomics in Cesky Krumlov, Czech Republic (https://evomics.org/2025-workshop-on-genomics/).
 
-Authors: Katharina Hoff & Natalia Nenasheva
+Authors: Katharina Hoff
 
 Contact: katharina.hoff@uni-greifswald.de
 
@@ -14,10 +14,10 @@ Link to wall with tool names: https://uni-greifswald.taskcards.app/#/board/5a8b7
    * theory: short read RNA-Seq to genome alignment with Hisat2
    * theory: sorting an RNA-Seq alignment file with Samtools
    * practice: application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein data base)
-   * practice: application of BRAKER1 (structural genome annotation with short read RNA-Seq alignments)
    * practice: application of BRAKER2 (structural genome annotation with protein database)
    * practice: application of GALBA (structural genome annotation with proteins of a closely related species, suitable for e.g. vertebrate genomes)
-   * practice: merging BRAKER1 and BRAKER2 (or GALBA) gene sets with TSEBRA
+   * practice: application of Tiberius (structural genome annotation ab initio with deep learning)
+   * practice: combining gene predictions with TSEBRA
    * practice: BUSCO assessment of predicted gene set
    * practice: preparing an assembly hub for the UCSC Genome Browser with MakeHub 
    * for advanced learners: annotate a chromsome of *Basesia duncati*
@@ -106,7 +106,7 @@ To create a new code block, you click on "Insert"
 If you want to obtain the same image for using it after the course, you can do so as follows (with singularity-ce version 3.11.2, available from https://github.com/sylabs/singularity, find their installation instructions at https://github.com/sylabs/singularity/blob/main/INSTALL.md, make sure you are not using an older version of singularity, as this may cause problems):
 
 ```
-singularity build genome_annotation.sif docker://katharinahoff/bioinformatics-notebook
+singularity build genome_annotation.sif docker://katharinahoff/bioinformatics-notebook:latest
 ```
 
 ```
