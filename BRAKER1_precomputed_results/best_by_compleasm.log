@@ -1,8 +1,0 @@
-/usr/share/augustus/scripts/getAnnoFastaFromJoingenes.py -g /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/genome.fa -f /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/GeneMark-ET/genemark.gtf -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc/genemark
-/opt/compleasm_kit/compleasm.py protein -p /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc/genemark.aa -l eukaryota_odb10 -t 8 -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc/genemark
-/opt/compleasm_kit/compleasm.py protein -p /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.aa -l eukaryota_odb10 -t 8 -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc/braker
-/opt/compleasm_kit/compleasm.py protein -p /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/augustus.hints.aa -l eukaryota_odb10 -t 8 -o /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/bbc/augustus
-BRAKER is missing 96.86 BUSCOs.
-GeneMark is missing 96.86 BUSCOs.
-Augustus is missing 96.86 BUSCOs.
-The BRAKER gene set /home/katharina/git/GenomeAnnotation_Workshop/BRAKER1/braker.gtf is the best one. It lacks 96.86% BUSCOs.

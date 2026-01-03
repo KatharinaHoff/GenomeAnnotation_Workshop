@@ -178,4 +178,12 @@ Connecting with port fowarding (keep terminal open!):
 ssh -N -L 8888:localhost:8888 katharina@141.53.34.56
 ```
 
-Replace IP in link.
+Run on greifserv3:
+
+```
+singularity exec --cleanenv --bind ${PWD}:${PWD} --bind $PWD:$PWD /home/katharina/git/docker-stacks3/docker-stacks/bioinformatics/bioinformatics-2023a-notebook/genome_annotation.sif jupyter notebook --no-browser --ip=127.0.0.1
+```
+
+Just connect from local machine, e.g.:
+
+http://localhost:8888/?token=bfc6249b103d2558cc5bd0418066815431cf9c1f0a2375c6
