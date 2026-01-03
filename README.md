@@ -168,3 +168,14 @@ Stefan Kemnitz from The University Compute Center at University of Greifswald (h
 
 Josie Paris from Università Politecnica delle Marche provided very helpful instructions on how to use the cloud computing infrastructure during the Cesky Krumlov workshop.
 
+
+
+# Development Notes
+
+Connecting with port fowarding (keep terminal open!):
+
+```
+ssh -N -L 8888:localhost:8888 katharina@141.53.34.56
+```
+
+Replace IP in link.
