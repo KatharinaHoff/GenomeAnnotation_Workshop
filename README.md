@@ -167,6 +167,8 @@ module load singularity
 
 Any tasks from our JupyterNotebook cells can be implemented in such scripts.
 
+If you want to submit a Tiberius job to a SLURM cluster that has GPU nodes, you need to request a GPU in your SLURM script with `#SBATCH --gres=gpu:1` (requesting 1 GPU). Make sure that the singularity image has access to the GPU, this can be done by adding the `--nv` flag to the singularity exec command. The singularity container has only been tested with NVIDIA A100 GPUs.
+
 #### Submit the script
 
 Simply submit the job with sbatch:
