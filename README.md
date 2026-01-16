@@ -40,7 +40,15 @@ The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a
 
 With the cloned data and the singularity file (`genome_annotation.sif`), you can run the image for JupyterNotebook display in the terminal as follows:
 
-3. Execute singularity:
+3. Execute singularity in screen:
+
+
+Screen allows you to keep your terminal session running even if your connection drops. To start a new screen session, type:
+```
+screen
+```
+
+Then run the singularity command:
 
 ```
 singularity exec --cleanenv --bind /home/genomics/workshop_materials/genome_annotation:/home/genomics/workshop_materials/genome_annotation --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan /home/genomics/workshop_materials/genome_annotation/genome_annotation.sif jupyter notebook --no-browser --ip=0.0.0.0 --port=8899
@@ -54,7 +62,12 @@ Change the IP (127.0.0.1) to your instance address
 
 <img width="1050" alt="Screenshot 2023-05-14 at 12 25 07" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/21e3f2f8-d532-4115-8a59-8527fe2d32cc">
 
-DO NOT CLOSE YOUR TERMINAL! 🖥 It's essential that you keep it open. Click on the folder to access the workshop content. Double click to open the GenomeAnnotation.ipynb. Welcome to the starting point of this lab 🤓
+
+You don't see that very long link? No worries, it may instead look like this: `http://ip-172-31-81-126:8899/`. Modify it according your to your instance IP address, let's say your instance IP address is 1.2.3.4, then convert the link to `http://1.2.3.4:8899/`. The browser may prompt your for a password, enter your ssh password.
+
+Click on the folder to access the workshop content. Double click to open the GenomeAnnotation.ipynb. Welcome to the starting point of this lab 🤓
+
+**Later, when you are finished,** go back to your terminal, or in case you closed it accidentally, ssh into your instance again, and reattach your screen session with `screen -r`. Press `Ctrl + C` to stop the Jupyter Notebook server, and then type `exit` to leave the screen session.
 
 ### A few notes about running code in Jupyter Notebooks:
 
