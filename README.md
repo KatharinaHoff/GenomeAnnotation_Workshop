@@ -6,21 +6,29 @@ Authors: Katharina Hoff
 
 Contact: katharina.hoff@uni-greifswald.de
 
-Link to wall with tool names: https://uni-greifswald.taskcards.app/#/board/5a8b701b-06a8-4023-8381-1e55d00fca64?token=0ef81721-81ce-4f76-8e23-c1fb4c1f8156
-
 ## Course contents
+
+The main notebook [GenomeAnnotation.ipynb](GenomeAnnotation.ipynb) covers:
 
    * theory: repeat library generation and repeat masking with RepeatModeler2/RepeatMasker
    * theory: short read RNA-Seq to genome alignment with Hisat2
    * theory: sorting an RNA-Seq alignment file with Samtools
-   * practice: application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein data base)
+   * practice: application of BRAKER3 (structural genome annotation with RNA-Seq alignments and a large protein database)
    * practice: application of BRAKER2 (structural genome annotation with protein database)
-   * practice: application of GALBA (structural genome annotation with proteins of a closely related species, suitable for e.g. vertebrate genomes)
+   * practice: application of GALBA (structural genome annotation with proteins of closely related species, suitable for e.g. vertebrate genomes)
    * practice: application of Tiberius (structural genome annotation ab initio with deep learning)
-   * practice: combining gene predictions with TSEBRA
-   * practice: BUSCO assessment of predicted gene set
-   * practice: preparing an assembly hub for the UCSC Genome Browser with MakeHub 
-   * for advanced learners: annotate a chromsome of *Basesia duncati*
+   * practice: combining gene predictions with TSEBRA (enforcing gene sets)
+   * practice: BUSCO assessment of predicted gene sets
+   * practice: preparing an assembly hub for the UCSC Genome Browser with MakeHub
+   * troubleshooting: common issues and solutions
+
+The advanced notebook [Annotate_Babesia_duncani.ipynb](Annotate_Babesia_duncani.ipynb) provides:
+
+   * hands-on practice: annotate Chromosome 4 of *Babesia duncani*
+   * group tasks: students are assigned to different annotation methods (GALBA, BRAKER3, BRAKER2, or Tiberius)
+   * comparative analysis: compare results across methods using BUSCO scores and descriptive statistics
+   * advanced TSEBRA: enforcing GeneMark-ETP genes or Tiberius genes in combined gene sets
+   * collaborative learning: results are collected in a shared Google Sheet for comparison
 
 
 ## Cloning the GiHub repository for this workshop
@@ -40,21 +48,48 @@ The organizers of the Cesky Krumlov Workshop on Genomics have already compiled a
 
 With the cloned data and the singularity file (`genome_annotation.sif`), you can run the image for JupyterNotebook display in the terminal as follows:
 
-3. Execute singularity:
+3. Execute singularity in screen:
+
+
+Screen allows you to keep your terminal session running even if your connection drops. To start a new screen session, type:
+```
+screen
+```
+
+Then run the singularity command:
 
 ```
 singularity exec --cleanenv --bind /home/genomics/workshop_materials/genome_annotation:/home/genomics/workshop_materials/genome_annotation --bind ${PWD}:${PWD} --bind $PWD:/home/jovyan /home/genomics/workshop_materials/genome_annotation/genome_annotation.sif jupyter notebook --no-browser --ip=0.0.0.0 --port=8899
 ```
+
+4. Open the JupyterNotebook in your web browser:
+
 This will display 3 links in your terminal. The links will look something like this:
 
 ```
 http://127.0.0.1:8899/?token=1d5886ad8013bbcaeba6ccaef3dc815e91e17caa696ab596
 ```
-Change the IP (127.0.0.1) to your instance address
+
+**IMPORTANT:** You need to modify this link before opening it in your browser:
+- Replace `127.0.0.1` with your AWS instance's IP address
+- For example, if your instance IP is `1.2.3.4`, change the link to:
+  ```
+  http://1.2.3.4:8899/?token=1d5886ad8013bbcaeba6ccaef3dc815e91e17caa696ab596
+  ```
+- **Copy the modified link and paste it into Chrome browser** (Chrome is recommended; Firefox may not work properly with the UCSC Genome Browser features)
 
 <img width="1050" alt="Screenshot 2023-05-14 at 12 25 07" src="https://github.com/KatharinaHoff/GenomeAnnotation_Workshop2023/assets/38511308/21e3f2f8-d532-4115-8a59-8527fe2d32cc">
 
-DO NOT CLOSE YOUR TERMINAL! 🖥 It's essential that you keep it open. Click on the folder to access the workshop content. Double click to open the GenomeAnnotation.ipynb. Welcome to the starting point of this lab 🤓
+Alternative link format: You may see a link like `http://ip-172-31-81-126:8899/` instead. In this case:
+- Replace the internal hostname with your instance IP address
+- For example, if your instance IP is `1.2.3.4`, convert it to: `http://1.2.3.4:8899/`
+- The browser may prompt you for a password - enter your ssh password
+
+5. Navigate to the notebook:
+
+Once the JupyterNotebook interface opens in your browser, click on the `GenomeAnnotation_Workshop` folder to access the workshop content. Double-click to open `GenomeAnnotation.ipynb`. Welcome to the starting point of this lab 🤓
+
+**Later, when you are finished,** go back to your terminal, or in case you closed it accidentally, ssh into your instance again, and reattach your screen session with `screen -r`. Press `Ctrl + C` to stop the Jupyter Notebook server, and then type `exit` to leave the screen session.
 
 ### A few notes about running code in Jupyter Notebooks:
 
@@ -153,6 +188,8 @@ module load singularity
 ```
 
 Any tasks from our JupyterNotebook cells can be implemented in such scripts.
+
+If you want to submit a Tiberius job to a SLURM cluster that has GPU nodes, you need to request a GPU in your SLURM script with `#SBATCH --gres=gpu:1` (requesting 1 GPU). Make sure that the singularity image has access to the GPU, this can be done by adding the `--nv` flag to the singularity exec command. The singularity container has only been tested with NVIDIA A100 GPUs.
 
 #### Submit the script
 
